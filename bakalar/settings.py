@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-miguelsanleon-bakalar-bo-7t9wzlndv0.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['bakalar-booking-app-f4bee72469cb.herokuapp.com', '8000-miguelsanleon-bakalar-bo-7t9wzlndv0.us2.codeanyapp.com']
 
 
 # Application definition
