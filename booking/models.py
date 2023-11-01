@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-
 STATUS = ((0, 'Booking pending'), (1, 'Booking accepted'),
           (2, 'Booking cancelled'))
 

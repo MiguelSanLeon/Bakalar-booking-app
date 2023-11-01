@@ -1,0 +1,37 @@
+body {
+    background: #200122;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #6f0000, #200122);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #6f0000, #200122);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        font-family: Babes Neue, sans-serif;
+        color:white;
+}
+
+.brand {
+    font-family: Baskervville, sans-serif;
+    color:darkgoldenrod;
+    font-size: 50px;
+    font-weight: 500;
+    margin-right: .5em;
+}
+
+.rest {
+    font-family: Bebas Neue, sans-serif;
+    color:white;
+}
+
+.bg-custom {
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.white {
+    color:white;
+}
+
+.carousel-container {
+    max-width: 800px;
+    max-height: 650px;
+}
