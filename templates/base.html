@@ -38,15 +38,15 @@
                         <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item {% if request.path == '/logout/' %}active{% endif %}">
-                        <a class="nav-link {% if request.path == '/logout/' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
+                    <li class="nav-item {% if request.path == '/accounts/logout/' %}active{% endif %}">
+                        <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item {% if request.path == '/signup/' %}active{% endif %}">
-                        <a class="nav-link {% if request.path == '/signup/' %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
+                    <li class="nav-item {% if request.path == '/accounts/signup/' %}active{% endif %}">
+                        <a class="nav-link {% if request.path == '/accounts/signup/' %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/login/' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
+                    <li class="nav-item {% if request.path == '/accounts/login/' %}active{% endif %}">
+                        <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                     <li class="nav-item {% if request.path == '/menu/' %}active{% endif %}">
