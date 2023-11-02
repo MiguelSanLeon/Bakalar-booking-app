@@ -1,1 +1,63 @@
 {% extends "base.html" %}
+
+{% block content %}
+<div class="container bg-custom my-4 py-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="text-center" >
+                <h1>Booking</h1>
+            </div>
+            {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="booking_date">Booking Date:</label>
+                        <input type="date" class="form-control" id="date"
+                            name="date" required><br>
+                    </div>
+                    <div class="col-md-4" >
+                        <label for="booking_time">Booking Time:</label>
+                        <input type="time" class="form-control" id="time"
+                            name="time" min="14:00" max="23:00" value="14:00"
+                            required><br>
+                    </div>
+                </div>
+                <div>
+                    <label for="booking_comments">Booking Comments:</label>
+                    <div class="row">
+                        <div class="col-md-8" >
+                            <span style="color:yellow">
+                                Please tell us if you have any food allergies, any 
+                                special requests
+                                and if there are children in your reservation. 
+                            </span>
+                        </div>
+                    </div>
+                    <textarea id="booking_comments" name="booking_comments"
+                        rows="4" cols="50"></textarea><br><br>
+                </div>
+                <div>
+                    <label for="guest_num">Guest Number:</label>
+                    <input type="number" id="guest_num" name="guest_num"
+                        min="1"><br><br>
+                </div>
+                <button class="btn btn-success" type="submit">Book your table</button>
+            </form>
+            {% else %}
+
+            <div class="row my-4">
+                <div class="col-12 text-center">
+                    If you are not logged in, please
+                    <a href="{% url 'account_signup' %}">signup</a>
+                    or
+                    <a href="{% url 'account_login' %}">login</a>
+                    first.
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

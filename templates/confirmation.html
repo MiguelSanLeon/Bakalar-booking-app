@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container bg-custom my-4 py-4">
+    <h1>Booking Confirmation</h1>
+    <p>Your booking has been sent and is waiting to be approved. Here are the details:</p>
+    <ul>
+        <li>Booking Date: {{ booking.booking_date }}</li>
+        <li>Booking Time: {{ booking.booking_time }}</li>
+        <li>Booking Comments: {{ booking.booking_comments }}</li>
+        <li>Number of Guests: {{ booking.guest_num }}</li>
+    </ul>
+</div>
+{% endblock %}

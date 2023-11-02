@@ -2,7 +2,7 @@ from django.shortcuts import render, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.http import HttpResponseRedirect
-from .forms import EditProfileForm
+from .forms import EditProfileForm, BookingForm
 from .models import Booking, UserProfile
 
 
@@ -43,3 +43,25 @@ class EditPage(View):
 class BookingPage(View):
     def get(self, request, *args, **kwargs):
         return render(request, "booking.html")
+   
+    def post(self, request, *args, **kwargs):
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking_date = form.cleaned_data['booking_date']
+            booking_time = form.cleaned_data['booking_time']
+            booking_comments = form.cleaned_data['booking_comments']
+            guest_num = form.cleaned_data['guest_num']
+
+            booking = Booking(
+                user=request.user,
+                booking_date=booking_date,
+                booking_time=booking_time,
+                booking_comments=booking_comments,
+                guest_num=guest_num,
+                status=0
+            )
+            booking.save()
+
+            return render(request, 'confirmation.html', {'booking': booking})
+        else:
+            return render(request, "booking.html", {'form': form})

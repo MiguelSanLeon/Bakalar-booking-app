@@ -32,3 +32,10 @@ class EditProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('first_name', 'last_name', 'phone_number')
+
+
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ['booking_date', 'booking_time',
+                  'booking_comments', 'guest_num']

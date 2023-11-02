@@ -11,17 +11,14 @@ body {
 
 .navbar-nav .nav-link {
     color: white;
-    /* Enlaces en blanco por defecto */
 }
 
 .navbar-nav .nav-link:hover {
     color: orange;
-    /* Efecto hover en naranja */
 }
 
 .navbar-nav .nav-link.active {
     color: yellow;
-    /* Active en amarillo */
 }
 
 .brand {
@@ -53,20 +50,18 @@ body {
 
  .footer .location {
      color: white;
-     /* Color de ancla en blanco por defecto */
  }
 
  .footer .location:hover span {
      color: orange;
-     /* Efecto hover en naranja para el texto del ancla */
+
  }
 
  .footer .fab {
      color: white;
-     /* Color de iconos en blanco por defecto */
+
  }
 
  .footer .fab:hover {
      color: orange;
-     /* Efecto hover en naranja para los iconos */
  }
