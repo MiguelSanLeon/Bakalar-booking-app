@@ -41,6 +41,10 @@
                     <li class="nav-item {% if request.path == '/accounts/logout/' %}active{% endif %}">
                         <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    <li class="nav-item {% if request.path == '/edit/' %}active{% endif %}">
+                        <a class="nav-link {% if request.path == '/edit/' %}active{% endif %}"
+                            href="{% url 'edit' %}">Edit User</a>
+                    </li>
                     {% else %}
                     <li class="nav-item {% if request.path == '/accounts/signup/' %}active{% endif %}">
                         <a class="nav-link {% if request.path == '/accounts/signup/' %}active{% endif %}" href="{% url 'account_signup' %}">Register</a>
@@ -70,7 +74,7 @@
     <footer class="footer mt-auto py-3 dark-bg">
         <div class="container text-center">
             <p class="m-0 text-center">
-                <a class="nav-link location" href="#"><span>Location</span></a>
+                <a class="nav-link location" href="{% url 'location' %}"><span>Location</span></a>
             </p>
             <p class="m-0 text-center text-white">Follow us:
                 <i class="fab fa-facebook px-2"></i>
