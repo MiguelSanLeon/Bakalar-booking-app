@@ -81,3 +81,8 @@ body {
  .footer .fab:hover {
      color: orange;
  }
+
+ .map {
+    width: 220px;
+    height: 200px;
+ }
