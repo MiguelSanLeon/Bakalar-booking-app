@@ -2,13 +2,24 @@
 
 {% block content %}
 <div class="container bg-custom my-4 py-4">
-    <h1>Booking Confirmation</h1>
-    <p>Your booking has been sent and is waiting to be approved. Here are the details:</p>
-    <ul>
-        <li>Booking Date: {{ booking.booking_date }}</li>
-        <li>Booking Time: {{ booking.booking_time }}</li>
-        <li>Booking Comments: {{ booking.booking_comments }}</li>
-        <li>Number of Guests: {{ booking.guest_num }}</li>
-    </ul>
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Booking Confirmation</h1>
+            <p>Please review your booking details:</p>
+            <ul>
+                <li>Booking Date: {{ booking.booking_date }}</li>
+                <li>Booking Time: {{ booking.booking_time }}</li>
+                <li>Booking Comments: {{ booking.booking_comments }}</li>
+                <li>Number of Guests: {{ booking.guest_num }}</li>
+            </ul>
+            <form action="{% url 'save_booking' booking.booking_id %}" method="post">
+                {% csrf_token %}
+                <button class="btn btn-success" name="confirm" type="submit">Confirm</button>
+                <a href="{% url 'booking' %}?date={{ booking.booking_date }}&time={{ booking.booking_time }}&comments={{ booking.booking_comments }}&guest_num={{ booking.guest_num }}"
+                    class="btn btn-primary">Edit Booking</a>
+
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}

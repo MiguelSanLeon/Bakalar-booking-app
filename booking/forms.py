@@ -39,3 +39,13 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['booking_date', 'booking_time',
                   'booking_comments', 'guest_num']
+        widgets = {
+            'booking_date': forms.DateInput(
+                attrs={'type': 'date', 'required': True}),
+            'booking_time': forms.TimeInput(
+                attrs={'type': 'time', 'required': True}),
+            'booking_comments': forms.Textarea(
+                attrs={'required': False}),
+            'guest_num': forms.NumberInput(
+                attrs={'required': True}),
+        }

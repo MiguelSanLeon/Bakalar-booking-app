@@ -12,11 +12,11 @@ class Booking(models.Model):
         primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='user_bookings')
-    booking_date = models.DateField(auto_now=False)
-    booking_time = models.TimeField(auto_now=False)
+    booking_date = models.DateField(auto_now=False, blank=False)
+    booking_time = models.TimeField(auto_now=False, blank=False)
     booking_comments = models.TextField(max_length=300, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    guest_num = models.PositiveIntegerField()
+    guest_num = models.PositiveIntegerField(blank=False)
     status = models.IntegerField(choices=STATUS, default='0')
 
     class Meta:

@@ -4,6 +4,7 @@ from django.views import View
 from django.http import HttpResponseRedirect
 from .forms import EditProfileForm, BookingForm
 from .models import Booking, UserProfile
+from django.contrib import messages
 
 
 class HomePage(View):
@@ -26,7 +27,7 @@ class EditPage(View):
         user_profile = UserProfile.objects.get(user=request.user)
         form = EditProfileForm(instance=user_profile)
         return render(request, "edit.html", {"form": form})
-    
+
     def post(self, request, *args, **kwargs):
         user_profile = request.user.user_profile
         form = EditProfileForm(request.POST, instance=user_profile)
@@ -42,26 +43,32 @@ class EditPage(View):
 
 class BookingPage(View):
     def get(self, request, *args, **kwargs):
-        return render(request, "booking.html")
-   
+        form = BookingForm()
+        return render(request, "booking.html", {'form': form})
+
     def post(self, request, *args, **kwargs):
         form = BookingForm(request.POST)
         if form.is_valid():
-            booking_date = form.cleaned_data['booking_date']
-            booking_time = form.cleaned_data['booking_time']
-            booking_comments = form.cleaned_data['booking_comments']
-            guest_num = form.cleaned_data['guest_num']
-
-            booking = Booking(
-                user=request.user,
-                booking_date=booking_date,
-                booking_time=booking_time,
-                booking_comments=booking_comments,
-                guest_num=guest_num,
-                status=0
-            )
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.status = 0
             booking.save()
-
-            return render(request, 'confirmation.html', {'booking': booking})
+            return redirect('confirm_booking', booking_id=booking.booking_id)
         else:
+            print(form.errors)
             return render(request, "booking.html", {'form': form})
+
+
+
+def confirm_booking(request, booking_id):
+    booking = Booking.objects.get(booking_id=booking_id)
+    return render(request, 'confirmation.html', {'booking': booking})
+
+
+def save_booking(request, booking_id):
+    booking = Booking.objects.get(booking_id=booking_id)
+    booking.save()
+
+    messages.success(request, 'Your booking has been saved in the system')
+
+    return redirect('home')
