@@ -9,6 +9,18 @@ body {
         color:white;
 }
 
+.welcome {
+    margin-right: 20px;
+    margin-top:4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px 4px 8px;
+    border-radius: 10px;
+}
+
+#navbarText {
+    margin-top: 25px;
+}
+
 .navbar-nav .nav-link {
     color: white;
 }
@@ -19,6 +31,10 @@ body {
 
 .navbar-nav .nav-link.active {
     color: yellow;
+}
+
+.navbar {
+    background-color: rgba(255, 68, 0, 0.2);
 }
 
 .brand {
