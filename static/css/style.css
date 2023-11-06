@@ -33,21 +33,31 @@ body {
     color: yellow;
 }
 
-.navbar {
-    background-color: rgba(255, 68, 0, 0.2);
+.navbar-brand {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
+.navbar {
+    background-color: rgba(255, 68, 0, 0.2);
+    padding: 0px;
+}
+
+a span {
+    display: block;
+}
 .brand {
     font-family: Baskervville, sans-serif;
     color:darkgoldenrod;
     font-size: 50px;
     font-weight: 500;
-    margin-right: .5em;
 }
 
 .rest {
     font-family: Bebas Neue, sans-serif;
     color:white;
+    margin-left: 4.5em;
+    font-size: 30px;
 }
 
 .bg-custom {
@@ -85,4 +95,8 @@ body {
  .map {
     width: 220px;
     height: 200px;
+ }
+
+ .min-height {
+    min-height: 300px;
  }
