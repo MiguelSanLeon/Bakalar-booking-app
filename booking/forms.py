@@ -49,3 +49,11 @@ class BookingForm(forms.ModelForm):
             'guest_num': forms.NumberInput(
                 attrs={'required': True}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(BookingForm, self).__init__(*args, **kwargs)
+        if self.instance:
+            self.fields['booking_date'].initial = self.instance.booking_date
+            self.fields['booking_time'].initial = self.instance.booking_time
+            self.fields['booking_comments'].initial = self.instance.booking_comments
+            self.fields['guest_num'].initial = self.instance.guest_num

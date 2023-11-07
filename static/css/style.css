@@ -100,3 +100,13 @@ a span {
  .min-height {
     min-height: 300px;
  }
+
+ .bg-card {
+    background: #200122;
+        color: white;
+        border: #200122 solid 4px;
+ }
+
+ .card-body {
+    font-size: 16px;    
+ }

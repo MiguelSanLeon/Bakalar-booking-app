@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, redirect
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.http import HttpResponseRedirect
@@ -59,9 +59,8 @@ class BookingPage(View):
             return render(request, "booking.html", {'form': form})
 
 
-
 def confirm_booking(request, booking_id):
-    booking = Booking.objects.get(booking_id=booking_id)
+    booking = get_object_or_404(Booking, booking_id=booking_id)
     return render(request, 'confirmation.html', {'booking': booking})
 
 
@@ -71,4 +70,47 @@ def save_booking(request, booking_id):
 
     messages.success(request, 'Your booking has been saved in the system')
 
+    return redirect('home')
+
+
+def check_bookings(request):
+    if request.user.is_authenticated:
+        user_bookings = Booking.objects.filter(user=request.user)
+        return render(request, 'check-bookings.html', {'bookings': user_bookings})
+    else:
+        return render(request, 'login.html')
+
+
+class EditBookingPage(View):
+    def get(self, request, booking_id, *args, **kwargs):
+        booking = get_object_or_404(Booking, booking_id=booking_id)
+        print("Booking Date:", booking.booking_date)
+        print("Booking Time:", booking.booking_time)
+        print("Booking Comments:", booking.booking_comments)
+        print("Number of Guests:", booking.guest_num)
+        form = BookingForm(instance=booking)
+        context = {
+            'form': form
+        }
+        return render(request, "edit-booking.html", context)
+
+    def post(self, request, booking_id, *args, **kwargs):
+        booking = Booking.objects.get(pk=booking_id)
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your booking has been updated')
+            return HttpResponseRedirect(reverse('check_bookings'))
+        return render(request, "edit-booking.html", {'form': form})
+
+
+def confirm_delete(request, booking_id):
+    return render(request, 'confirm-delete.html', {'booking_id': booking_id})
+
+
+def delete_booking(request, booking_id):
+    if request.method == 'POST' and request.POST.get('confirm_delete') == 'true':
+        booking = get_object_or_404(Booking, booking_id=booking_id)
+        booking.delete()
+        return redirect('check_bookings')
     return redirect('home')

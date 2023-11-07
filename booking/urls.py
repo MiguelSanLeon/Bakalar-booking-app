@@ -13,4 +13,11 @@ urlpatterns = [
          views.confirm_booking, name='confirm_booking'),
     path('save_booking/<uuid:booking_id>/',
          views.save_booking, name='save_booking'),
+    path('check-bookings/', views.check_bookings, name='check_bookings'),
+    path('edit-booking/<uuid:booking_id>/',
+         views.EditBookingPage.as_view(), name='edit_booking'),
+    path('confirm-delete/<uuid:booking_id>/',
+         views.confirm_delete, name='confirm_delete'),
+    path('delete-booking/<uuid:booking_id>/',
+         views.delete_booking, name='delete_booking'),
 ]
