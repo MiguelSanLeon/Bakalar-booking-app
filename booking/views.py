@@ -83,19 +83,12 @@ def check_bookings(request):
 
 class EditBookingPage(View):
     def get(self, request, booking_id, *args, **kwargs):
-        booking = get_object_or_404(Booking, booking_id=booking_id)
-        print("Booking Date:", booking.booking_date)
-        print("Booking Time:", booking.booking_time)
-        print("Booking Comments:", booking.booking_comments)
-        print("Number of Guests:", booking.guest_num)
+        booking = get_object_or_404(Booking, pk=booking_id)
         form = BookingForm(instance=booking)
-        context = {
-            'form': form
-        }
-        return render(request, "edit-booking.html", context)
+        return render(request, "edit-booking.html", {'form': form})
 
     def post(self, request, booking_id, *args, **kwargs):
-        booking = Booking.objects.get(pk=booking_id)
+        booking = get_object_or_404(Booking, pk=booking_id)
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()

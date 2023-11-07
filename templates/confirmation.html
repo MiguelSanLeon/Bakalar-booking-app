@@ -12,13 +12,15 @@
                 <li>Booking Comments: {{ booking.booking_comments }}</li>
                 <li>Number of Guests: {{ booking.guest_num }}</li>
             </ul>
-            <form action="{% url 'save_booking' booking.booking_id %}" method="post">
-                {% csrf_token %}
-                <button class="btn btn-success" name="confirm" type="submit">Confirm</button>
-                <a href="{% url 'booking' %}?date={{ booking.booking_date }}&time={{ booking.booking_time }}&comments={{ booking.booking_comments }}&guest_num={{ booking.guest_num }}"
-                    class="btn btn-primary">Edit Booking</a>
-
-            </form>
+            <div class="d-flex" >
+                <form action="{% url 'confirm_booking' booking.booking_id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-success mx-2" name="confirm" type="submit">Confirm</button>
+                </form>
+                <form action="{% url 'edit_booking' booking.booking_id %}" method="get">
+                    <button class="btn btn-primary" type="submit">Edit Booking</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
