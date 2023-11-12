@@ -49,28 +49,34 @@ class BookingPage(View):
     def post(self, request, *args, **kwargs):
         form = BookingForm(request.POST)
         if form.is_valid():
-            booking = form.save(commit=False)
-            booking.user = request.user
-            booking.status = 0
-            booking.save()
-            return redirect('confirm_booking', booking_id=booking.booking_id)
+            return HttpResponseRedirect(reverse('preview_booking', kwargs={'form': form}))
         else:
             print(form.errors)
             return render(request, "booking.html", {'form': form})
 
 
-def confirm_booking(request, booking_id):
-    booking = get_object_or_404(Booking, booking_id=booking_id)
-    return render(request, 'confirmation.html', {'booking': booking})
+class PreviewBookingPage(View):
+    def post(self, request, *args, **kwargs):
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            return render(request, 'confirmation.html', {'form': form})
+        else:
+            return render(request, "booking.html", {'form': form})
 
 
-def save_booking(request, booking_id):
-    booking = Booking.objects.get(booking_id=booking_id)
-    booking.save()
+class BookingSaved(View):
+    template_name = 'new-booking.html'
 
-    messages.success(request, 'Your booking has been saved in the system')
-
-    return redirect('home')
+    def post(self, request, *args, **kwargs):
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.status = 0 
+            booking.save()
+            return render(request, self.template_name, {'booking': booking})
+        else:
+            return render(request, "booking.html", {'form': form})
 
 
 def check_bookings(request):
@@ -83,12 +89,12 @@ def check_bookings(request):
 
 class EditBookingPage(View):
     def get(self, request, booking_id, *args, **kwargs):
-        booking = get_object_or_404(Booking, pk=booking_id)
+        booking = get_object_or_404(Booking, booking_id=booking_id)
         form = BookingForm(instance=booking)
         return render(request, "edit-booking.html", {'form': form})
 
     def post(self, request, booking_id, *args, **kwargs):
-        booking = get_object_or_404(Booking, pk=booking_id)
+        booking = get_object_or_404(Booking, booking_id=booking_id)
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
@@ -107,3 +113,8 @@ def delete_booking(request, booking_id):
         booking.delete()
         return redirect('check_bookings')
     return redirect('home')
+
+
+def form_errors(request, form):
+    errors = {field: form.errors[field] for field in form.errors}
+    return render(request, 'form_errors.html', {'errors': errors})

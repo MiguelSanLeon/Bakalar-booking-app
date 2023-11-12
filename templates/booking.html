@@ -8,7 +8,7 @@
                 <h1>Booking</h1>
             </div>
             {% if user.is_authenticated %}
-            <form method="post">
+            <form method="post" action="{% url 'preview_booking' %}">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-4">
@@ -42,7 +42,7 @@
                     <input type="number" id="guest_num" name="guest_num"
                         min="1"><br><br>
                 </div>
-                <button class="btn btn-success" type="submit">Book your table</button>
+                <button class="btn btn-success" id="book-table-btn" type="submit">Book your table</button>
             </form>
             {% else %}
 
@@ -66,6 +66,19 @@
                 {% endfor %}
             </div>
             {% endif %}
+        </div>
+    </div>
+</div>
+<div id="confirmationModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Your bookings is waiting to be accepted. You can check your booking status and make some changes using "check your booking" button in home page.
+            </div>
         </div>
     </div>
 </div>

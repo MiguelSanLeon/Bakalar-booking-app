@@ -3,24 +3,56 @@
 {% block content %}
 <div class="container bg-custom my-4 py-4">
     <div class="row">
-        <div class="col-md-8">
-            <h1>Booking Confirmation</h1>
-            <p>Please review your booking details:</p>
-            <ul>
-                <li>Booking Date: {{ booking.booking_date }}</li>
-                <li>Booking Time: {{ booking.booking_time }}</li>
-                <li>Booking Comments: {{ booking.booking_comments }}</li>
-                <li>Number of Guests: {{ booking.guest_num }}</li>
-            </ul>
-            <div class="d-flex" >
-                <form action="{% url 'confirm_booking' booking.booking_id %}" method="post">
-                    {% csrf_token %}
-                    <button class="btn btn-success mx-2" name="confirm" type="submit">Confirm</button>
-                </form>
-                <form action="{% url 'edit_booking' booking.booking_id %}" method="get">
-                    <button class="btn btn-primary" type="submit">Edit Booking</button>
-                </form>
+        <div class="col-md-6">
+            <div class="text-center">
+                <h1>Booking Preview</h1>
             </div>
+            <div>
+                <strong>Booking Date:</strong> {{ form.cleaned_data.booking_date|date:'Y-m-d' }}<br>
+                <strong>Booking Time:</strong> {{ form.cleaned_data.booking_time|time:'H:i' }}<br>
+                <strong>Booking Comments:</strong> {{ form.cleaned_data.booking_comments }}<br>
+                <strong>Guest Number:</strong> {{ form.cleaned_data.guest_num }}<br>
+            </div>
+            <form method="post" action="{% url 'booking_saved' %}">
+                {% csrf_token %}
+                <input type="hidden" name="booking_date" value="{{ form.cleaned_data.booking_date|date:'Y-m-d' }}">
+                <input type="hidden" name="booking_time" value="{{ form.cleaned_data.booking_time|time:'H:i' }}">
+                <input type="hidden" name="booking_comments" value="{{ form.cleaned_data.booking_comments }}">
+                <input type="hidden" name="guest_num" value="{{ form.cleaned_data.guest_num }}">
+                <button class="btn btn-success" type="submit">Submit your Booking</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <h1>Edit Booking</h1>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="booking_date">Booking Date:</label>
+                        <input type="date" class="form-control" id="booking_date" name="booking_date"
+                            value="{{ form.cleaned_data.booking_date|date:'Y-m-d' }}" required><br>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="booking_time">Booking Time:</label>
+                        <input type="time" class="form-control" id="booking_time" name="booking_time"
+                            value="{{ form.cleaned_data.booking_time|time:'H:i' }}" min="14:00" max="23:00"
+                            required><br>
+                    </div>
+                </div>
+                <div>
+                    <label for="booking_comments">Booking Comments:</label>
+                    <textarea id="booking_comments" name="booking_comments" rows="4"
+                        cols="50">{{ form.cleaned_data.booking_comments }}</textarea><br><br>
+                </div>
+                <div>
+                    <label for="guest_num">Guest Number:</label>
+                    <input type="number" id="guest_num" name="guest_num" min="1"
+                        value="{{ form.cleaned_data.guest_num }}"><br><br>
+                </div>
+                <button class="btn btn-primary" type="submit">Update Preview</button>
+            </form>
         </div>
     </div>
 </div>

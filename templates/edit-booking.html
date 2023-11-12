@@ -14,12 +14,13 @@
                     <div class="col-md-4">
                         <label for="booking_date">Booking Date:</label>
                         <input type="date" class="form-control" id="booking_date"
-                            name="booking_date" required><br>
+                            name="booking_date" 
+                            value="{{ form.initial.booking_date|date:'Y-m-d' }}" required><br>
                     </div>
                     <div class="col-md-4" >
                         <label for="booking_time">Booking Time:</label>
                         <input type="time" class="form-control" id="booking_time"
-                            name="booking_time" min="14:00" max="23:00"
+                            name="booking_time" value="{{ form.initial.booking_time|time:'H:i' }}" min="14:00" max="23:00"
                             required><br>
                     </div>
                 </div>
@@ -35,12 +36,12 @@
                         </div>
                     </div>
                     <textarea id="booking_comments" name="booking_comments"
-                        rows="4" cols="50"></textarea><br><br>
+                        rows="4" cols="50">{{ form.initial.booking_comments }}</textarea><br><br>
                 </div>
                 <div>
                     <label for="guest_num">Guest Number:</label>
                     <input type="number" id="guest_num" name="guest_num"
-                        min="1"><br><br>
+                        min="1" value="{{ form.initial.guest_num }}"><br><br>
                 </div>
                 <button class="btn btn-success" type="submit">Save the changes</button>
             </form>
