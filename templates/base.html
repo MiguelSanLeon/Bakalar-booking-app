@@ -47,9 +47,9 @@
                     <li class="nav-item {% if request.path == '/accounts/logout/' %}active{% endif %}">
                         <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    <li class="nav-item {% if request.path == '/edit/' %}active{% endif %}">
-                        <a class="nav-link {% if request.path == '/edit/' %}active{% endif %}"
-                            href="{% url 'edit' %}">Edit User</a>
+                    <li class="nav-item {% if request.path == '/edit_user/' %}active{% endif %}">
+                        <a class="nav-link {% if request.path == '/edit_user/' %}active{% endif %}"
+                            href="{% url 'edit_user' %}">Edit User</a>
                     </li>
                     {% else %}
                     <li class="nav-item {% if request.path == '/accounts/signup/' %}active{% endif %}">

@@ -22,11 +22,11 @@ class LocationPage(View):
         return render(request, "location.html")
 
 
-class EditPage(View):
+class EditUserPage(View):
     def get(self, request, *args, **kwargs):
         user_profile = UserProfile.objects.get(user=request.user)
         form = EditProfileForm(instance=user_profile)
-        return render(request, "edit.html", {"form": form})
+        return render(request, "edit-user.html", {"form": form})
 
     def post(self, request, *args, **kwargs):
         user_profile = request.user.user_profile
