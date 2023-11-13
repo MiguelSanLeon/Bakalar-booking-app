@@ -97,7 +97,9 @@ class EditBookingPage(View):
         booking = get_object_or_404(Booking, booking_id=booking_id)
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
-            form.save()
+            booking = form.save(commit=False)
+            booking.status = 0
+            booking.save()
             messages.success(request, 'Your booking has been updated')
             return HttpResponseRedirect(reverse('check_bookings'))
         return render(request, "edit-booking.html", {'form': form})
