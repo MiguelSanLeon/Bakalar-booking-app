@@ -3,31 +3,45 @@
 from allauth.account.forms import SignupForm
 from django import forms
 from .models import UserProfile, Booking
+from django.core.validators import RegexValidator
 
 
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=25, label='First Name')
     last_name = forms.CharField(max_length=25, label='Last Name')
-    phone_number = forms.CharField(max_length=11, label='Phone Number')
+    phone_number = forms.CharField(
+        max_length=11,
+        label='Phone Number',
+        validators=[RegexValidator(
+            r'^\d{11}$', 'Enter a valid 11-digit phone number.')]
+    )
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
         first_name = self.cleaned_data['first_name']
         last_name = self.cleaned_data['last_name']
         phone_number = self.cleaned_data['phone_number']
-        user_profile = UserProfile.objects.create(
-            user=user,
-            first_name=first_name,
-            last_name=last_name,
-            phone_number=phone_number)
-        user_profile.save()
+
+        try:
+            user_profile = UserProfile.objects.create(
+                user=user,
+                first_name=first_name,
+                last_name=last_name,
+                phone_number=phone_number)
+            user_profile.save()
+        except Exception as e:
+            print(f"Error creating user profile: {e}")
+            
         return user
 
 
 class EditProfileForm(forms.ModelForm):
 
     phone_number = forms.CharField(
-        widget=forms.TextInput(attrs={'type': 'number'}))
+        widget=forms.TextInput(attrs={'type': 'number'}),
+        validators=[RegexValidator(
+            r'^\d{11}$', 'Enter a valid 11-digit phone number.')]
+    )
 
     class Meta:
         model = UserProfile
