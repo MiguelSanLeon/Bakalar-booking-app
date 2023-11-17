@@ -71,6 +71,40 @@
     </nav>
 
     <main class="flex-shrink-0 main-bg">
+        {% if form.errors %}
+        <div class="row">
+            <div class="alert alert-danger col-md-6  offset-md-3" role="alert">
+                {% for field in form %}
+                {% for error in field.errors %}
+                <div class="text-center">
+                    <strong>{{ field.label }}: </strong>{{ error }}
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% if messages %}
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+            </div>    
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var messageItems = document.querySelectorAll('.message-item');
+                messageItems.forEach(function (item) {
+                    setTimeout(function () {
+                        item.style.display = 'none';
+                    }, 3000);
+                });
+            });
+        </script>
+        {% endif %}
         {% block content %}
 
         {% endblock content %}
@@ -83,9 +117,15 @@
                 <a class="nav-link location" href="{% url 'location' %}"><span>Location</span></a>
             </p>
             <p class="m-0 text-center text-white">Follow us:
-                <i class="fab fa-facebook px-2"></i>
-                <i class="fab fa-x-twitter px-2"></i>
-                <i class="fab fa-instagram px-2"></i>
+                <a href="http://facebook.com" target="_blank" rel="noopener"
+                    aria-label="Visit our Facebook page (opens in a new tab)">
+                    <i class="fab fa-facebook px-2"></i></a>
+                <a href="http://twitter.com" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitter page (opens in a new tab)">
+                    <i class="fab fa-x-twitter px-2"></i></a>
+                <a href="http://instagram.com" target="_blank" rel="noopener"
+                    aria-label="Visit our Instagram page (opens in a new tab)">
+                    <i class="fab fa-instagram px-2"></i></a>
             </p>
         </div>
     </footer>

@@ -1,9 +1,8 @@
-# forms.py
-
 from allauth.account.forms import SignupForm
 from django import forms
 from .models import UserProfile, Booking
 from django.core.validators import RegexValidator
+from datetime import datetime, timedelta
 
 
 class CustomSignupForm(SignupForm):
@@ -31,7 +30,7 @@ class CustomSignupForm(SignupForm):
             user_profile.save()
         except Exception as e:
             print(f"Error creating user profile: {e}")
-            
+
         return user
 
 
@@ -71,3 +70,22 @@ class BookingForm(forms.ModelForm):
             self.fields['booking_time'].initial = self.instance.booking_time
             self.fields['booking_comments'].initial = self.instance.booking_comments
             self.fields['guest_num'].initial = self.instance.guest_num
+
+    def clean_booking_date(self):
+        booking_date = self.cleaned_data.get('booking_date')
+        if booking_date:
+            today = datetime.now().date()
+            if booking_date < today:
+                raise forms.ValidationError(
+                    "Invalid date. Please select a date in the future.")
+        return booking_date
+
+    def clean_booking_time(self):
+        booking_time = self.cleaned_data.get('booking_time')
+        if booking_time:
+            min_time = datetime.strptime('14:00', '%H:%M').time()
+            max_time = datetime.strptime('22:00', '%H:%M').time()
+            if not min_time <= booking_time <= max_time:
+                raise forms.ValidationError(
+                    "Invalid time. Please select a time between 14:00 and 22:00.")
+        return booking_time

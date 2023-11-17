@@ -16,12 +16,6 @@
                             <p class="card-text"><strong>Booking Time:</strong> {{ booking.booking_time }}</p>
                             <p class="card-text"><strong>Number of Guests:</strong> {{ booking.guest_num }}</p>
                             <p class="card-text"><strong>Status:</strong> {{ booking.get_status_display }}</p>
-                            <script>
-                                console.log("Booking Id: {{booking.booking_id }}");
-                                console.log("Booking Date: {{ booking.booking_date }}");
-                                console.log("Booking Time: {{ booking.booking_time }}");
-                                console.log("Number of Guests: {{ booking.guest_num }}");
-                            </script>
                             <div class="d-flex">
                                 <a href="{% url 'edit_booking' booking.booking_id %}" class="btn btn-primary mx-2">Edit</a>
                                 <a href="{% url 'confirm_delete' booking_id=booking.booking_id %}" class="btn btn-danger">Cancel</a>

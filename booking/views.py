@@ -1,10 +1,11 @@
+from django.contrib import messages
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.http import HttpResponseRedirect, HttpResponseForbidden
 from .forms import EditProfileForm, BookingForm
 from .models import Booking, UserProfile
-from django.contrib import messages
+
 
 
 class HomePage(View):
@@ -37,6 +38,10 @@ class EditUserPage(View):
             user.first_name = user_profile.first_name
             user.last_name = user_profile.last_name
             user.save()
+
+            messages.success(
+                request, 'Your profile has been updated successfully!')
+
             return HttpResponseRedirect(reverse('home'))
         return render(request, "edit.html", {'form': form})
 
@@ -75,8 +80,13 @@ class BookingSaved(View):
             booking.user = request.user
             booking.status = 0
             booking.save()
+
+            messages.success(
+                request, 'Your Booking has been saved!')
+
             return render(request, self.template_name, {'booking': booking})
         else:
+            print(form.errors)
             return render(request, "booking.html", {'form': form})
 
 
@@ -105,8 +115,11 @@ class EditBookingPage(View):
             booking = form.save(commit=False)
             booking.status = 0
             booking.save()
+
             messages.success(request, 'Your booking has been updated')
+
             return HttpResponseRedirect(reverse('check_bookings'))
+        print(form.errors)
         return render(request, "edit-booking.html", {'form': form})
 
     def forbidden_response(self, request):
@@ -129,6 +142,10 @@ def delete_booking(request, booking_id):
     ):
         booking = get_object_or_404(Booking, booking_id=booking_id)
         booking.delete()
+
+        messages.success(
+            request, 'Your Booking has been deleted!')
+
         return redirect('check_bookings')
     return redirect('home')
 
