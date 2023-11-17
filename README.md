@@ -2,8 +2,6 @@
 
 ![BAKALAR-BOOKING-APP mock up images]()
 
-
-
 Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herokuapp.com/).
 
 ## Table of Contents
