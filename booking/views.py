@@ -43,7 +43,7 @@ class EditUserPage(View):
                 request, 'Your profile has been updated successfully!')
 
             return HttpResponseRedirect(reverse('home'))
-        return render(request, "edit.html", {'form': form})
+        return render(request, "edit-user.html", {'form': form})
 
 
 class BookingPage(View):
