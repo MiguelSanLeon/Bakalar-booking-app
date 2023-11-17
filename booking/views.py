@@ -93,8 +93,7 @@ class EditBookingPage(View):
     def get(self, request, booking_id, *args, **kwargs):
         booking = get_object_or_404(Booking, booking_id=booking_id)
         if request.user != booking.user:
-            return HttpResponseForbidden(
-                "You don't have permission to access this booking.")
+            return self.forbidden_response(request)
 
         form = BookingForm(instance=booking)
         return render(request, "edit-booking.html", {'form': form})
@@ -109,6 +108,14 @@ class EditBookingPage(View):
             messages.success(request, 'Your booking has been updated')
             return HttpResponseRedirect(reverse('check_bookings'))
         return render(request, "edit-booking.html", {'form': form})
+
+    def forbidden_response(self, request):
+        return render(
+            request,
+            'forbidden-page.html',
+            {'message': "You don't have permission to access this booking."},
+            status=403
+        )
 
 
 def confirm_delete(request, booking_id):
