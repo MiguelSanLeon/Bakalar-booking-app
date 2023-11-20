@@ -3,17 +3,28 @@
 {% block content %}
 <div class="container bg-custom my-4 py-4">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5 offset-md-1">
             <div class="text-center">
-                <h1>New Booking</h1>
+                <h2>New Booking</h2>
             </div>
             <div>
                 <strong>Booking Date:</strong> {{ booking.booking_date|date:'Y-m-d' }}<br>
                 <strong>Booking Time:</strong> {{ booking.booking_time|time:'H:i' }}<br>
                 <strong>Booking Comments:</strong> {{ booking.booking_comments }}<br>
                 <strong>Guest Number:</strong> {{ booking.guest_num }}<br>
-                <a href="{% url 'home' %}" class="btn btn-danger">Home</a>
+                <a href="{% url 'home' %}" class="btn btn-danger my-2">Home</a>
             </div>
+        </div>
+        <div class="col-md-5">
+            <div class="text-center">
+                <h2>Booking Acceptance</h2>
+            </div>
+            <strong>
+                Your booking is pending acceptance, now you can check your booking
+                status or edit it in check your bookings.
+            </strong>
+            <button class="btn btn-warning custom-btn my-2" onclick="location.href = '/check-bookings/';">Check your
+                bookings</button>
         </div>
     </div>
 </div>

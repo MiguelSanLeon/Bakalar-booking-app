@@ -89,3 +89,10 @@ class BookingForm(forms.ModelForm):
                 raise forms.ValidationError(
                     "Invalid time. Please select a time between 14:00 and 22:00.")
         return booking_time
+
+    def clean_guest_num(self):
+        guest_num = self.cleaned_data.get('guest_num')
+        if guest_num and guest_num > 12:
+            raise forms.ValidationError(
+                "In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126.")
+        return guest_num

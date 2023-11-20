@@ -1,21 +1,15 @@
 body {
     background: #200122;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #6f0000, #200122);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #6f0000, #200122);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        font-family: Babes Neue, sans-serif;
-        color:white;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6f0000, #200122);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #6f0000, #200122);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: Babes Neue, sans-serif;
+    color: white;
 }
 
-.welcome {
-    margin-right: 20px;
-    margin-top:4px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 4px 8px 4px 8px;
-    border-radius: 10px;
-}
+/* navbar */
 
 #navbarText {
     margin-top: 25px;
@@ -43,30 +37,41 @@ body {
     padding: 0px;
 }
 
+/* General */
+
+.welcome {
+    margin-right: 20px;
+    margin-top: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px 4px 8px;
+    border-radius: 10px;
+}
+
 a span {
     display: block;
 }
+
 .brand {
     font-family: Baskervville, sans-serif;
-    color:darkgoldenrod;
+    color: darkgoldenrod;
     font-size: 50px;
     font-weight: 500;
 }
 
 .rest {
     font-family: Bebas Neue, sans-serif;
-    color:white;
+    color: white;
     margin-left: 4.5em;
     font-size: 30px;
 }
 
 .bg-custom {
     background-color: rgba(0, 0, 0, 0.5);
-    
+
 }
 
 .white {
-    color:white;
+    color: white;
 }
 
 .carousel-container {
@@ -74,39 +79,41 @@ a span {
     max-height: 700px;
 }
 
- .footer .location {
-     color: white;
- }
-
- .footer .location:hover span {
-     color: orange;
-
- }
-
- .footer .fab {
-     color: white;
-
- }
-
- .footer .fab:hover {
-     color: orange;
- }
-
- .map {
+.map {
     width: 220px;
     height: 200px;
- }
+}
 
- .min-height {
+.min-height {
     min-height: 300px;
- }
+}
 
- .bg-card {
+.bg-card {
     background: #200122;
-        color: white;
-        border: #200122 solid 4px;
- }
+    color: white;
+    border: #200122 solid 4px;
+}
 
- .card-body {
-    font-size: 16px;    
- }
+.card-body {
+    font-size: 16px;
+}
+
+/* footer */
+
+.footer .location {
+    color: white;
+}
+
+.footer .location:hover span {
+    color: orange;
+
+}
+
+.footer .fab {
+    color: white;
+
+}
+
+.footer .fab:hover {
+    color: orange;
+}
