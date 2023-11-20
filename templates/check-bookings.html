@@ -3,6 +3,11 @@
 {% block content %}
 <div class="container bg-custom my-4 py-4">
     <div class="row">
+        <div class="col-md-12 text-center my-2">
+            <h3>Warning</h3>
+            <strong>If you edit any of your bookings their status will return to 'Booking pending'</strong>
+
+        </div>
         <div class="col-md-12">
             {% if user.is_authenticated %}
             <h2>{{ user.username }} Bookings</h2>
