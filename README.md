@@ -31,7 +31,7 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
     - [Register Page](#register-page)
     - [Edit User Page](#edit-user-page)
     - [Login and Logout](#login-and-logout)
-    - [Menu](#menu)
+    - [Menu page](#menu-page)
     - [Booking Page](#booking-page)
     - [Check Your Bookings Page](#check-your-bookings-page)
     - [Edit Bookings](#edit-bookings)
@@ -194,24 +194,65 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ![home-page-image](documentation_assets/index-page.png)
 
-    - The home page displays a title on top of a main image
-    - Under the main image the user can find a menu button and a booking button when not logged in.
+- The home page displays a title on top of a main image
+- Under the main image the user can find a menu button and a booking button when not logged in.
 
 ![home-page-login-image](documentation_assets/index-page-login.png)
 
-    - When the user is logged in and has some bookings already the index page displays a third button named "check your bookings".
+- When the user is logged in and has some bookings already the index page displays a third button named "check your bookings".
 
 ### Register Page
 
 ![register-page-image](documentation_assets/register-image.png)
 
+- This is a customized register form. First name, last name and phone number has been added to the original django registration form.
+- The user name has to be unique as it is the primary key
+- The email is the only optional field.
+- The phone number needs to contain 11 digits
+- Password1 and Password2 must match.
+- The password need to contain letters and numbers and cannot be a very used password.
+- All error messages will be posted in the form  to provide a correct feedback to the user in case something went wrong during the registration process.
+- When the process is finished the User will receive a succesfull message.
+
+![register-page-error-messages-image](documentation_assets/register-error-messages-image.png)
+
 ### Edit User Page
+
+![edit-user-profile-image](documentation_assets/edit-user-profile-image.png)
+
+- The Edit User Profile Page cotains the three input fields that corresponds to the personal contact data from user profile.
+- The phone number needs to be 11 digits long, and the form also provides error messages when an error occurs.
+- When the process is finished the User will receive a succesfull message.
 
 ### Login and Logout
 
-### Menu
+![login-image](documentation_assets/login-image.png)
+
+- The login page it's a simple login form where the user has to provide the Username and the password.
+- The page displays a welcome message indicating the user that to make a booking they need to signup first in case the user don't have an account.
+- Wrong credentials will trigger error messages to be displayed.
+- When the process is finished the User will receive a succesfull message.
+
+![logout-image](documentation_assets/logout-image.png)
+
+- This page only ask the user if the are sure to logout and the button to proceed.
+- When the process is finished the User will receive a succesfull message.
+
+### Menu page
+
+![menu-image](documentation_assets/menu-image.png)
+
+- The menu page contains a carousel whit a group of images that shows the different dishes in the menu with an arrow system to navigate through it.
+- Each image contains the name of the dish and a brief description.
 
 ### Booking Page
+
+![booking-page-image](documentation_assets/booking-page-image.png)
+
+- The booking page show a booking form that contains 4 fields.
+
+  1- The booking date field is required and must be a the present day or a future date. It has a calendar widget that can be use to pick the date.
+  2- The booking time field is also required and must be between 14:00 and 22:00
 
 ### Check Your Bookings Page
 
