@@ -40,6 +40,7 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
   - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
     - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
+    - [Packages / Dependecies Installed](#packages--dependecies-installed)
   - [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
     - [Code Validation](#code-validation)
@@ -276,11 +277,38 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ### Check Your Bookings Page
 
+![check-your-bookings-page-image](documentation_assets/check-your-booking-page.image.png)
+
+- This page contains all the users bookings displayed as cards with two buttons, edit and cancel.
+- The cards also displays the status information of the booking so the user can see if the booking is pending, accepted or has been cancel by the restaurant.
+
+![cancel-booking-image](documentation_assets/cancel-booking-image.png)
+
+- When the user click on cancel button the web shows a confirmation message with two buttons under it, Yes or No.
+- When pressing "Yes" button the user is redirected to check your bookings page again and a succesful message will be shown in the page.
+- If the user clicks on "No" button the user will be redirected to check your bookings page without deleting the booking.
+
 ### Edit Bookings
+
+- If the user clicks on the "Edit" button in one of the booking cards, the user will be redirected to the Edit Booking page.
+  
+![edit-booking-page-image](documentation_assets/edit-booking-page-image.png)
+
+- The user can edit the booking data in the prepopulated form that will show the current booking data.
+- If the user clicks on the "Save the Changes" button, he/she will be redirected to check your bookings page and the booking card will shown the new booking data. A succesful message will be post in the page.
+- The form displays error messages when an error occurs.
 
 ### Contact Us
 
+![contact-us-page-image](documentation_assets/contact-us-page-image.png)
+
+- In this page the user can find the contact information of the restaurant and a map that show the exact location of the restaurant.
+
 ### Forbidden Page
+
+![forbidden-page-image](documentation_assets/forbidden-page-image.png)
+
+- This page shows a message if a user tries to access other users booking data using the edit booking page.
 
 [Go to the top](#table-of-contents)
 
@@ -288,11 +316,67 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ### Languages Used
 
+- [HTML5](https://en.wikipedia.org/wiki/HTML)
+  - The project uses HyperText Markup Language.
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+  - The project uses Cascading Style Sheets.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+  - The project uses JavaScript.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+  - The project uses Python.
+
 ### Frameworks, Libraries and Programs Used
+
+- [Django 3](https://docs.djangoproject.com/en/3.2/)
+  - The project uses Django 3.2
+- [Boostrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  - The project uses Bootstrap 5.
+- [ElephantSQL](https://customer.elephantsql.com/instance)
+  - The project uses ElephantSQL as a database provider.
+- [Codeanywhere](https://app.codeanywhere.com/)
+  - The project uses Codeanywhere.
+- [Chrome](https://www.google.com/intl/en_uk/chrome/)
+  - The project uses Chrome to debug and test the source code using HTML5.
+- [Balsamiq](https://balsamiq.com/)
+  - Balsamiq was used to create the wireframes during the design process.
+- [Google Fonts](https://fonts.google.com/)
+  - Google fonts were used to import the fonts.
+- [GitHub](https://github.com/)
+  - GitHub was used to store the project's code after being pushed from Git.
+- [Heroku](https://dashboard.heroku.com/apps)
+  - Heroku was used to deploy the project.
+- [Icons8](https://icons8.com/icons)
+  - Icons8 was used to find a favicon for the project.
+- [Dbdiagram](https://dbdiagram.io/home)
+  - Dbdiagram was used to create the database diagram.
+- [Tiny PNG](https://tinypng.com)
+  - Tiny PNG was used to reduce the file size of the images.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+  - Chrome DevTools was used during development process for code review and to test responsiveness.
+- [W3C Markup Validator](https://validator.w3.org/)
+  - W3C Markup Validator was used to validate the HTML code.
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  - W3C CSS Validator was used to validate the CSS code.
+
+- [JSHint](https://jshint.com/)
+  - The JSHints JavaScript Code Quality Tool was used to validate the site's JavaScript code.
+
+### Packages / Dependecies Installed
+
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)  
+  - Django Allauth was used for user authentication, registration, and account management.
+  
+- [Gunicorn](https://gunicorn.org/)  
+  - Gunicorn was used as Python WSGI HTTP Server for UNIX to support the deployment of Django application.  
+
+- [Cloudinary](https://cloudinary.com/)
+  - Cloudinary has been used as static files storage and management solution.
 
 [Go to the top](#table-of-contents)
 
 ## Testing
+
 
 ### Testing User Stories
 
