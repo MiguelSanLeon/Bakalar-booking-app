@@ -20,7 +20,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: orange;
+    color: #ffa500;
 }
 
 .navbar-nav .nav-link.active {
@@ -53,7 +53,7 @@ a span {
 
 .brand {
     font-family: Baskervville, sans-serif;
-    color: darkgoldenrod;
+    color: #b8860b;
     font-size: 50px;
     font-weight: 500;
 }
