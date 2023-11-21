@@ -21,22 +21,25 @@
                         <label for="booking_time">Booking Time:</label>
                         <input type="time" class="form-control" id="booking_time"
                             name="booking_time" value="{{ form.initial.booking_time|time:'H:i' }}" min="14:00" max="23:00"
-                            required><br>
+                            required>
+                            <span style="color:yellow">Hours: 14:00 to 22:00</span>
+                            <br>
                     </div>
                 </div>
                 <div>
                     <label for="booking_comments">Booking Comments:</label>
+                    <textarea id="booking_comments" name="booking_comments"
+                        rows="4" cols="50">{{ form.initial.booking_comments }}</textarea>
                     <div class="row">
-                        <div class="col-md-8" >
+                        <div class="col-md-8">
                             <span style="color:yellow">
-                                Please tell us if you have any food allergies, any 
+                                Please tell us if you have any food allergies, any
                                 special requests
-                                and if there are children in your reservation. 
+                                and if there are children in your reservation.
                             </span>
                         </div>
                     </div>
-                    <textarea id="booking_comments" name="booking_comments"
-                        rows="4" cols="50">{{ form.initial.booking_comments }}</textarea><br><br>
+                    <br>
                 </div>
                 <div>
                     <label for="guest_num">Guest Number:</label>

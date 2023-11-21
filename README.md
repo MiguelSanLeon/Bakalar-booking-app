@@ -29,10 +29,10 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
     - [General](#general)
     - [Home Page](#home-page)
     - [Register Page](#register-page)
-    - [Edit User Page](#edit-user-page)
+    - [Edit User Profile Page](#edit-user-profile-page)
     - [Login and Logout](#login-and-logout)
     - [Menu page](#menu-page)
-    - [Booking Page](#booking-page)
+    - [Booking Page, Preview Booking Page and Booking Confirmation](#booking-page-preview-booking-page-and-booking-confirmation)
     - [Check Your Bookings Page](#check-your-bookings-page)
     - [Edit Bookings](#edit-bookings)
     - [Contact Us](#contact-us)
@@ -216,7 +216,7 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ![register-page-error-messages-image](documentation_assets/register-error-messages-image.png)
 
-### Edit User Page
+### Edit User Profile Page
 
 ![edit-user-profile-image](documentation_assets/edit-user-profile-image.png)
 
@@ -245,14 +245,34 @@ This web application has been designed with bootstrap5 to be responsive across a
 - The menu page contains a carousel whit a group of images that shows the different dishes in the menu with an arrow system to navigate through it.
 - Each image contains the name of the dish and a brief description.
 
-### Booking Page
+### Booking Page, Preview Booking Page and Booking Confirmation
 
 ![booking-page-image](documentation_assets/booking-page-image.png)
 
 - The booking page show a booking form that contains 4 fields.
 
   1- The booking date field is required and must be a the present day or a future date. It has a calendar widget that can be use to pick the date.
-  2- The booking time field is also required and must be between 14:00 and 22:00
+  2- The booking time field is also required and must be between 14:00 and 22:00 as the message says. It also has a widget to pick the hour and minutes.
+  3- The booking comments field is a text area where the user is invited to write any food allergy, special request and if there are any children in the group. This field is not required.
+  4- The guest number field is required and has a limit of 12 people. If the user picks a number bigger than 12 then the form shows a message asking the user to call by phone for that special case.
+
+![booking-page-error-message-image](documentation_assets/booking-page-error-message-image.png)
+
+- The form displays error messages when an error occurs.
+- When the user click on "book your table" button and the data is validated the user is redirected to the preview booking page.
+
+![preview-booking-page-image](documentation_assets/preview-booking-page-image.png)
+
+- This page contains to sections, the Booking Preview section and the Edit Booking section.
+- The Booking Preview section contains all the information that the user has provide in the booking form. Below that information there is a button to submit the booking as it is.
+- The Edit Booking section is prepopulate with the booking information provided by the user and can be edited. Under the form there is a button to update the Preview Booking section with all the changes aplied to the booking.
+- The form displays error messages when an error occurs.
+- When the user click on "Submit your Booking" button, the user is redirected to the New Booking Page and a successful message is displayed in the New Booking Page.
+
+![new-booking-page-image](documentation_assets/new-booking-page-image.png)
+
+- The New Booking Page shows all the booking details and a "Home" button under it.
+- It also displays a message about the booking acceptance process and a "check your bookings" button where the user can check the booking status.
 
 ### Check Your Bookings Page
 
