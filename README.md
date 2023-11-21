@@ -100,6 +100,8 @@ Booking acceptance email | 3 | 1
 
 Total | 44 | 40
 
+[Go to the top](#table-of-contents)
+
 ## Scope
 
  As all features can't be implemented in the first release of the project, the project will be divided in two phases. The first phase will include the features that have been identified in order to build the minimum viable product.
@@ -121,6 +123,8 @@ Total | 44 | 40
 * Booking acceptance email
 * Account email verification
 * Social media signup
+
+[Go to the top](#table-of-contents)
 
 ## Structure
 
@@ -161,16 +165,45 @@ Sign out page | ![desktop-signout-wireframe](documentation_assets/d-signuot-wf.p
 Contact page | ![desktop-contact-wireframe](documentation_assets/d-contact-wf.png) | ![mobile-contact-wireframe](documentation_assets/m-contact-wf.png)
 Booking page | ![desktop-booking-wireframe](documentation_assets/d-booking-wf.png) | ![mobile-booking-wireframe](documentation_assets/m-booking-wf.png)
 Booking Preview page | ![desktop-booking-preview-wireframe](documentation_assets/d-booking-preview-wf.png) | ![mobile-booking-preview-wireframe](documentation_assets/m-booking-preview-wf.png)
+Check Booking page | ![desktop-check-bookings-wireframe](documentation_assets/d-check-bookings-wf.png) | ![mobile-check-bookings-wireframe](documentation_assets/m-check-bookings-wf.png)
+Edit Booking page | ![desktop-edit-booking-wireframe](documentation_assets/d-edit-booking-wf.png) | ![mobile-edit-booking-wireframe](documentation_assets/m-edit-booking-wf.png)
+Edit User Profile page | ![desktop-edit-user-profile-wireframe](documentation_assets/d-edit-user-profile-wf.png) | ![mobile-edit-user-profile-wireframe](documentation_assets/m-edit-user-profile-wf.png)
 
-
+[Go to the top](#table-of-contents)
 
 ## Features
 
 ### General
 
+This web application has been designed with bootstrap5 to be responsive across all devices.
+
+* Navigation bar:
+  - Navigation bar when there's no user logged in:
+![Navbar-logout-image](documentation_assets/navbar-logout-image.png)
+  - Navigation bar when there's a user logged in:
+![Navbar-login-image](documentation_assets/navbar-login-image.png)
+  - The navigation bar contains links to all the sections and  has a hover effect that changes color to provide feedback to the Site User for a better user experience. It also shows the active page highlighting the page name in yellow.
+
+* Footer:
+  - Footer image:
+![Footer-image](documentation_assets/footer-image.png)
+  - The footer contains a link (location) to contact page where the user can find a map, the restaurant address, an email and the phone number.
+  - The footer contains links to social media channels.
+
 ### Home Page
 
+![home-page-image](documentation_assets/index-page.png)
+
+    - The home page displays a title on top of a main image
+    - Under the main image the user can find a menu button and a booking button when not logged in.
+
+![home-page-login-image](documentation_assets/index-page-login.png)
+
+    - When the user is logged in and has some bookings already the index page displays a third button named "check your bookings".
+
 ### Register Page
+
+![register-page-image](documentation_assets/register-image.png)
 
 ### Edit User Page
 
@@ -188,11 +221,15 @@ Booking Preview page | ![desktop-booking-preview-wireframe](documentation_assets
 
 ### Forbidden Page
 
+[Go to the top](#table-of-contents)
+
 ## Technologies Used
 
 ### Languages Used
 
 ### Frameworks, Libraries and Programs Used
+
+[Go to the top](#table-of-contents)
 
 ## Testing
 
@@ -206,7 +243,11 @@ Booking Preview page | ![desktop-booking-preview-wireframe](documentation_assets
 
 ### Manual Testing
 
+[Go to the top](#table-of-contents)
+
 ## Deployment
+
+[Go to the top](#table-of-contents)
 
 ## Credits
 
@@ -216,4 +257,8 @@ Booking Preview page | ![desktop-booking-preview-wireframe](documentation_assets
 
 ### Code
 
+[Go to the top](#table-of-contents)
+
 ## Acknowledgements
+
+[Go to the top](#table-of-contents)
