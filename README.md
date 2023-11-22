@@ -43,8 +43,12 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
     - [Packages / Dependecies Installed](#packages--dependecies-installed)
   - [Testing](#testing)
     - [Code Validation](#code-validation)
+      - [HTML](#html)
+      - [CSS](#css)
+      - [Python](#python)
     - [Accessibility](#accessibility)
     - [Tools Testing](#tools-testing)
+      - [Chrome DevTools](#chrome-devtools)
     - [Manual Testing](#manual-testing)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -378,13 +382,63 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ### Code Validation
 
+#### HTML
 
+The [W3C Markup Validator](https://validator.w3.org/) service was used to validate the HTML code of the project in order to ensure there were no syntax errors.
+
+W3C Markup Validator found the following error concerning index.html.
+![html-validation-index-error](documentation_assets/html-validation-index-error.png)
+
+The error was solved removing the size attribute that wasn't working in the favicon link.
+![html-validation-index-error-solved](documentation_assets/html-validation-index-error-solved.png)
+
+W3C Markup Validator found the following error concerning location.html.
+![html-validation-location-error](documentation_assets/html-validation-location-error.png)
+
+The error was solved removing one of the div closing tags and fixing indentation.
+![html-validation-location-error-solved](documentation_assets/html-validation-location-error-solved.png)
+
+#### CSS
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was used to validate the CSS code.
+
+W3C CSS Validator found no errors or warnings on my CSS.
+![css-validation-error](documentation_assets/css-validation-error.png)
+
+#### Python
+
+| Python file | Errors / Warnings | Code Reviewed |
+| --- | --- | --- |
+| /admin.py | ![python-errors-warnings](documentation_assets/python-error-warning-no-errors.png) | |
+| /forms.py | ![python-errors-warnings-forms](documentation_assets/python-error-warning-forms.py.png) | ![python-errors-warnings-forms-solved](documentation_assets/python-error-warning-forms.py-solved.png) |
+| /views.py | ![python-errors-warnings](documentation_assets/python-error-warning-no-errors.png) | |
+| /models.py | ![python-errors-warnings](documentation_assets/python-error-warning-no-errors.png) | |
+| /urls.py | ![python-errors-warnings](documentation_assets/python-error-warning-no-errors.png) | |
 
 ### Accessibility
 
+Lighthouse in Chrome DevTools has been used to confirm that the colors and fonts being used throughout the website are easy to read and accessible. See reports in the table below:
+
+Page | Lighthouse Report |
+| --- | --- |
+| index.html | ![index-lighthouse](documentation_assets/index-lighthouse.png) |
+| edit-user.html | ![edit-user-lighthouse](documentation_assets/edit-user-lighthouse.png) |
+| menu.html | ![menu-lighthouse](documentation_assets/menu-lighthouse.png) |
+| location.html | ![location-lighthouse](documentation_assets/location-lighthouse.png) |
+| booking | ![booking-lighthouse](documentation_assets/booking-lighthouse.png) |
+| check-bookings.html | ![check-bookings-lighthouse](documentation_assets/check-bookings-lighthouse.png) |
+| edit-booking.html | ![edit-booking-lighthouse](documentation_assets/edit-booking-lighthouse.png) |
+| confirm-delete.html | ![delete-booking-lighthouse](documentation_assets/delete-lighthouse.png) |
+
 ### Tools Testing
 
+#### [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+
+Chrome DevTools was used during the development process to test, explore and modify HTML elements and CSS styles used in the project.
+
 ### Manual Testing
+
+
 
 [Go to the top](#table-of-contents)
 

@@ -65,11 +65,13 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BookingForm, self).__init__(*args, **kwargs)
+        instance = self.instance
+
         if self.instance:
-            self.fields['booking_date'].initial = self.instance.booking_date
-            self.fields['booking_time'].initial = self.instance.booking_time
-            self.fields['booking_comments'].initial = self.instance.booking_comments
-            self.fields['guest_num'].initial = self.instance.guest_num
+            self.fields['booking_date'].initial = instance.booking_date
+            self.fields['booking_time'].initial = instance.booking_time
+            self.fields['booking_comments'].initial = instance.booking_comments
+            self.fields['guest_num'].initial = instance.guest_num
 
     def clean_booking_date(self):
         booking_date = self.cleaned_data.get('booking_date')
@@ -87,12 +89,14 @@ class BookingForm(forms.ModelForm):
             max_time = datetime.strptime('22:00', '%H:%M').time()
             if not min_time <= booking_time <= max_time:
                 raise forms.ValidationError(
-                    "Invalid time. Please select a time between 14:00 and 22:00.")
+                    "Invalid time. Please select a time between" 
+                    "14:00 and 22:00.")
         return booking_time
 
     def clean_guest_num(self):
         guest_num = self.cleaned_data.get('guest_num')
         if guest_num and guest_num > 12:
             raise forms.ValidationError(
-                "In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126.")
+                "In case you need to book for more than 12 people, please"
+                "contact us on our phone number 55 555 345 2126.")
         return guest_num

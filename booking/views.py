@@ -7,7 +7,6 @@ from .forms import EditProfileForm, BookingForm
 from .models import Booking, UserProfile
 
 
-
 class HomePage(View):
     def get(self, request, *args, **kwargs):
         return render(request, "index.html")

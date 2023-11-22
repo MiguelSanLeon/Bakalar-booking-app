@@ -1,6 +1,13 @@
 from django.urls import path
 from . import views
-from .views import HomePage, MenuPage, LocationPage, BookingPage, EditUserPage, PreviewBookingPage, BookingSaved
+from .views import (
+    HomePage,
+    MenuPage,
+    LocationPage,
+    BookingPage,
+    EditUserPage,
+    PreviewBookingPage,
+    BookingSaved)
 
 
 urlpatterns = [
