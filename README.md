@@ -42,7 +42,6 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
     - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
     - [Packages / Dependecies Installed](#packages--dependecies-installed)
   - [Testing](#testing)
-    - [Testing User Stories](#testing-user-stories)
     - [Code Validation](#code-validation)
     - [Accessibility](#accessibility)
     - [Tools Testing](#tools-testing)
@@ -377,10 +376,9 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ## Testing
 
-
-### Testing User Stories
-
 ### Code Validation
+
+
 
 ### Accessibility
 
