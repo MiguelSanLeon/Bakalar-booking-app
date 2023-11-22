@@ -50,6 +50,10 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
     - [Tools Testing](#tools-testing)
       - [Chrome DevTools](#chrome-devtools)
     - [Manual Testing](#manual-testing)
+      - [Browser Compatibility](#browser-compatibility)
+      - [Device Compatibility](#device-compatibility)
+      - [Navbar testing](#navbar-testing)
+      - [Footer testing](#footer-testing)
   - [Deployment](#deployment)
   - [Credits](#credits)
     - [Content](#content)
@@ -437,6 +441,43 @@ Page | Lighthouse Report |
 Chrome DevTools was used during the development process to test, explore and modify HTML elements and CSS styles used in the project.
 
 ### Manual Testing
+
+#### Browser Compatibility
+
+Browser | Outcome | Pass/Fail |
+--- | --- | --- |
+Google Chrome | No appearance, responsiveness nor functionality issues.|  <span style="color:green">Pass</span> |
+Safari | No appearance, responsiveness nor functionality issues. |  <span style="color:green">Pass</span> |
+Mozilla Firefox | No responsiveness nor functionality issues.|  <span style="color:green">Pass</span> |
+Microsoft Edge | No appearance, responsiveness nor functionality issues. |  <span style="color:green">Pass</span> |
+
+#### Device Compatibility
+
+Device | Operative System |Outcome | Pass/Fail
+--- | --- | --- | --- |
+ AsusVivoBook 15 | Windows 10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+MacBook Pro 15" | macOS Big Sur | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+Dell Inspiron 15 | Windows 10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+iPad Pro 12.9" | iOS 15 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+iPad Pro 10.5" | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+Samsung Galaxy S8 | Android 7 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+
+#### Navbar testing
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Bakalar Restaurant title link | when clicking the restaurant name in the navigation bar, the browser redirects the user to the home page. | Pass |
+| Home navbar link | when click the "Home" link in the navigation bar, the browser redirects the user to the home page. The link is also highlighted in yellow colour when the user is in the home page. The hover effects makes the home link orange when the user move the mouse over the link. | Pass |
+Register navbar link | when click the "Register" link in the navigation bar, the browser redirects the user to the Signup page. The link is also highlighted in yellow colour when the user is in the Signup page. The hover effects makes the Register link orange when the user move the mouse over the link. This link disappear when the user is logged in. | Pass |
+Login navbar link | when click the "Login" link in the navigation bar, the browser redirects the user to the Login page. The link is also highlighted in yellow colour when the user is in the Login page. The hover effects makes the Login link orange when the user move the mouse over the link. This link disappear when the user is logged in. | Pass |
+Menu navbar link | when click the "Menu" link in the navigation bar, the browser redirects the user to the Menu page. The link is also highlighted in yellow colour when the user is in the Menu page. The hover effects makes the Menu link orange when the user move the mouse over the link. | Pass |
+Contact Us navbar link | when click the "Contact Us" link in the navigation bar, the browser redirects the user to Location page. The link is also highlighted in yellow colour when the user is in the Location page. The hover effects makes the Contact Us link orange when the user move the mouse over the link. | Pass |
+Logout navbar link | When the user is logged in, the navbar shows the Logout link. When the user click on the "Logout" link in the navigation bar, the browser redirects the user to Sign out page. The link is also highlighted in yellow colour when the user is in the Sign out page. The hover effects makes the Logout link orange when the user move the mouse over the link. | Pass |
+| Edit User navbar link | When the user is logged in, the navbar shows the Edit User link. When the user click on the "Edit User" link in the navigation bar, the browser redirects the user to Edit User page. The link is also highlighted in yellow colour when the user is in the Edit User page. The hover effects makes the Logout link orange when the user move the mouse over the link. | Pass |  
+Navbar welcome message | When the user is logged in, the navbar shows a customize welcome message with the Usernme on it. | Pass |
+
+#### Footer testing
 
 
 
