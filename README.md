@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This web application is a booking system for a restaurant, created with django and bootstrap. This project uses CRUD functionality to give users the options to create, read, update and delete their bookings, also including a small menu section and a contact section where the user can find information of interest about the restaurant.
+This web application is a booking system for a restaurant, created with Django and Bootstrap. This project uses CRUD functionality to give users the options to create, read, update, and delete their bookings. It also includes a small menu section and a contact section where the user can find information of interest about the restaurant.
 
 ![BAKALAR-BOOKING-APP mock up images](documentation_assets/index-page.png)
 
@@ -79,33 +79,43 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
 
 ## User Experience (UX)
 
-We all have booked a table at a restaurant at some point and being able to do so through a web service should not be an unpleasant experience. For this reason, my project aims to give the user a clear vision of the options available at all times, trying to offer the most complete service possible when booking a table.
+At some point, we've all reserved a table at a restaurant, and the process of doing so through a web service shouldn't be an unpleasant experience. With this in mind, my project strives to provide users with a clear overview of available options at all times. The goal is to deliver a comprehensive and user-friendly service for booking a table.
 
 ### Project Goals
 
 - Responsive design to make the website accessible on different screen sizes.
-- Well structured website and easy to navigate.
+- Well-structured website and easy to navigate.
 - Provide security in access to user data and their bookings.
 - Allows CRUD functionality for bookings.
 
 ### User Stories
 
-Throughout the project I used the GitHub projects board to log all user stories. I used an AGILE perspective to manage the user stories inside my github project.
+Throughout the project, I used the GitHub Projects board to log all user stories. I applied an Agile perspective to manage the user stories within my GitHub project
 
 ![github-project-board](documentation_assets/github-project-board.png)
 
-- USER STORIE 1: As a Admin I can manage the bookings so that I can all the data provided by the user and accept the bookings.
-- USER STORIE 2: As a User I can select time, date, number of guests and add comments to my booking so that I describe my booking details properly.
-- USER STORIE 3: As a User I can edit my booking so that I can change the date, time, number of guests or add a comment.
-- USER STORIE 4: As a User I can delete my booking from the website so that I can cancel it.
-- USER STORIE 5: As a User I can view my booking so that I can check my booking details and status.
-- USER STORIE 6: As a User I can book a table in the website so that I don't need to call the restaurant for a booking.
-- USER STORIE 7: As a User I can see the correct restaurant address so that I could find the exact location of the restaurant, the better route and the estimated time of arrival.
-- USER STORIE 8: As a User I can navigate to contact page so that I can have the restaurant address and contact details.
-- USER STORIE 9: As a User I can see the restaurant menu so that I can decide to book a table or not.
-- USER STORIE 10: As a User I can create a user profile so that I can login to book a table.
-- USER STORIE 11: As a user I can edit my user profile so that I can update my data on the website.
-  
+- USER STORY 1: As an Admin, I can manage the bookings so that I can access all the data provided by the user and accept the bookings.
+
+- USER STORY 2: As a User, I can select the time, date, number of guests, and add comments to my booking so that I can describe my booking details properly.
+
+- USER STORY 3: As a User, I can edit my booking so that I can change the date, time, number of guests, or add a comment.
+
+- USER STORY 4: As a User, I can delete my booking from the website so that I can cancel it.
+
+- USER STORY 5: As a User, I can view my booking so that I can check my booking details and status.
+
+- USER STORY 6: As a User, I can book a table on the website so that I don't need to call the restaurant for a booking.
+
+- USER STORY 7: As a User, I can see the correct restaurant address so that I can find the exact location of the restaurant, the better route, and the estimated time of arrival.
+
+- USER STORY 8: As a User, I can navigate to the contact page so that I can have the restaurant address and contact details.
+
+- USER STORY 9: As a User, I can see the restaurant menu so that I can decide whether to book a table or not.
+
+- USER STORY 10: As a User, I can create a user profile so that I can log in to book a table.
+
+- USER STORY 11: As a User, I can edit my user profile so that I can update my data on the website.
+
 ### Strategy Table
 
 Opportunity/Problem/Feature| Importance| Viability/Feasibility
@@ -127,7 +137,7 @@ Total | 44 | 40
 
 ## Scope
 
- As all features can't be implemented in the first release of the project, the project will be divided in two phases. The first phase will include the features that have been identified in order to build the minimum viable product.
+As not all features can be implemented in the first release of the project, it will be divided into two phases. The first phase will include the features that have been identified to build the minimum viable product.
 
 ### Phase 1
 
@@ -166,7 +176,7 @@ I decided to use a gradient background from [Uigradients](https://uigradients.co
 
 ### Typography
 
-I chose 2 fonts for this project, Baskerville and Bebas Neue with sans serif as fallback font for both.
+I chose two fonts for this project: Baskerville and Bebas Neue, with sans-serif as the fallback font for both.
 
 ![baskervville](documentation_assets/baskervville.png)
 ![bebasneue](documentation_assets/bebasneue.png)
@@ -217,8 +227,8 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ![home-page-image](documentation_assets/index-page.png)
 
-- The home page displays a title on top of a main image
-- Under the main image the user can find a menu button and a booking button when not logged in.
+- The home page features a prominent title positioned above a main image.
+- Below the main image, the user can find a menu button and a booking button when not logged in.
 
 ![home-page-login-image](documentation_assets/index-page-login.png)
 
@@ -228,14 +238,14 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ![register-page-image](documentation_assets/register-image.png)
 
-- This is a customized register form. First name, last name and phone number has been added to the original django registration form.
-- The user name has to be unique as it is the primary key
+- This is a customized registration form. First name, last name, and phone number have been added to the original Django registration form.
+- The username has to be unique as it is the primary key.
 - The email is the only optional field.
-- The phone number needs to contain 11 digits
+- The phone number needs to contain 11 digits.
 - Password1 and Password2 must match.
-- The password need to contain letters and numbers and cannot be a very used password.
-- All error messages will be posted in the form  to provide a correct feedback to the user in case something went wrong during the registration process.
-- When the process is finished the User will receive a succesfull message.
+- The password needs to contain both letters and numbers and cannot be a commonly used password.
+- All error messages will be displayed in the form to provide correct feedback to the user in case something went wrong during the registration process.
+- When the process is finished, the user will receive a successful message.
 
 ![register-page-error-messages-image](documentation_assets/register-error-messages-image.png)
 
@@ -243,72 +253,72 @@ This web application has been designed with bootstrap5 to be responsive across a
 
 ![edit-user-profile-image](documentation_assets/edit-user-profile-image.png)
 
-- The Edit User Profile Page cotains the three input fields that corresponds to the personal contact data from user profile.
+- The Edit User Profile Page contains three input fields corresponding to the personal contact data from the user profile.
 - The phone number needs to be 11 digits long, and the form also provides error messages when an error occurs.
-- When the process is finished the User will receive a succesfull message.
+- When the process is finished, the user will receive a successful message.
 
 ### Login and Logout
 
 ![login-image](documentation_assets/login-image.png)
 
-- The login page it's a simple login form where the user has to provide the Username and the password.
-- The page displays a welcome message indicating the user that to make a booking they need to signup first in case the user don't have an account.
-- Wrong credentials will trigger error messages to be displayed.
-- When the process is finished the User will receive a succesfull message.
+- The login page is a simple form where the user has to provide the username and the password.
+- The page displays a welcome message indicating to the user that to make a booking, they need to sign up first if they don't have an account.
+- Incorrect credentials will trigger error messages to be displayed.
+- When the process is finished, the user will receive a successful message.
 
 ![logout-image](documentation_assets/logout-image.png)
 
-- This page only ask the user if the are sure to logout and the button to proceed.
-- When the process is finished the User will receive a succesfull message.
+- This page only asks the user if they are sure to log out and provides a button to proceed.
+- When the process is finished, the user will receive a successful message.
 
 ### Menu page
 
 ![menu-image](documentation_assets/menu-image.png)
 
-- The menu page contains a carousel whit a group of images that shows the different dishes in the menu with an arrow system to navigate through it.
-- Each image contains the name of the dish and a brief description.
+- The menu page contains a carousel with a group of images showcasing the different dishes in the menu, equipped with an arrow system for navigation.
+- Each image includes the name of the dish and a brief description.
 
 ### Booking Page, Preview Booking Page and Booking Confirmation
 
 ![booking-page-image](documentation_assets/booking-page-image.png)
 
-- The booking page show a booking form that contains 4 fields.
+- The booking page shows a booking form that contains 4 fields:
 
-  1- The booking date field is required and must be a the present day or a future date. It has a calendar widget that can be use to pick the date.
-  2- The booking time field is also required and must be between 14:00 and 22:00 as the message says. It also has a widget to pick the hour and minutes.
-  3- The booking comments field is a text area where the user is invited to write any food allergy, special request and if there are any children in the group. This field is not required.
-  4- The guest number field is required and has a limit of 12 people. If the user picks a number bigger than 12 then the form shows a message asking the user to call by phone for that special case.
+  1. The booking date field is required and must be the present day or a future date. It has a calendar widget that can be used to pick the date.
+  2. The booking time field is also required and must be between 14:00 and 22:00, as the message says. It also has a widget to pick the hour and minutes.
+  3. The booking comments field is a text area where the user is invited to write any food allergies, special requests, and specify if there are any children in the group. This field is not required.
+  4. The guest number field is required and has a limit of 12 people. If the user selects a number greater than 12, the form shows a message asking the user to call by phone for that special case.
 
 ![booking-page-error-message-image](documentation_assets/booking-page-error-message-image.png)
 
 - The form displays error messages when an error occurs.
-- When the user click on "book your table" button and the data is validated the user is redirected to the preview booking page.
+- When the user clicks on the "Book Your Table" button and the data is validated, the user is redirected to the preview booking page.
 
 ![preview-booking-page-image](documentation_assets/preview-booking-page-image.png)
 
-- This page contains to sections, the Booking Preview section and the Edit Booking section.
-- The Booking Preview section contains all the information that the user has provide in the booking form. Below that information there is a button to submit the booking as it is.
-- The Edit Booking section is prepopulate with the booking information provided by the user and can be edited. Under the form there is a button to update the Preview Booking section with all the changes aplied to the booking.
+- This page contains two sections: the Booking Preview section and the Edit Booking section.
+- The Booking Preview section contains all the information that the user has provided in the booking form. Below that information, there is a button to submit the booking as it is.
+- The Edit Booking section is prepopulated with the booking information provided by the user and can be edited. Under the form, there is a button to update the Preview Booking section with all the changes applied to the booking.
 - The form displays error messages when an error occurs.
-- When the user click on "Submit your Booking" button, the user is redirected to the New Booking Page and a successful message is displayed in the New Booking Page.
+- When the user clicks on the "Submit your Booking" button, the user is redirected to the New Booking Page, and a successful message is displayed on the New Booking Page.
 
 ![new-booking-page-image](documentation_assets/new-booking-page-image.png)
 
 - The New Booking Page shows all the booking details and a "Home" button under it.
-- It also displays a message about the booking acceptance process and a "check your bookings" button where the user can check the booking status.
+- It also displays a message about the booking acceptance process and a "Check Your Bookings" button where the user can check the booking status.
 
 ### Check Your Bookings Page
 
 ![check-your-bookings-page-image](documentation_assets/check-your-booking-page.image.png)
 
-- This page contains all the users bookings displayed as cards with two buttons, edit and cancel.
-- The cards also displays the status information of the booking so the user can see if the booking is pending, accepted or has been cancel by the restaurant.
+- This page contains all the user's bookings displayed as cards with two buttons, "Edit" and "Cancel."
+- The cards also display the status information of the booking so the user can see if the booking is pending, accepted, or has been canceled by the restaurant.
 
 ![cancel-booking-image](documentation_assets/cancel-booking-image.png)
 
-- When the user click on cancel button the web shows a confirmation message with two buttons under it, Yes or No.
-- When pressing "Yes" button the user is redirected to check your bookings page again and a succesful message will be shown in the page.
-- If the user clicks on "No" button the user will be redirected to check your bookings page without deleting the booking.
+- When the user clicks on the "Cancel" button, the web shows a confirmation message with two buttons under it, "Yes" or "No."
+- Pressing the "Yes" button redirects the user to the "Check Your Bookings" page again, and a successful message will be displayed on the page.
+- If the user clicks on the "No" button, the user will be redirected to the "Check Your Bookings" page without deleting the booking.
 
 ### Edit Bookings
 
@@ -317,20 +327,20 @@ This web application has been designed with bootstrap5 to be responsive across a
 ![edit-booking-page-image](documentation_assets/edit-booking-page-image.png)
 
 - The user can edit the booking data in the prepopulated form that will show the current booking data.
-- If the user clicks on the "Save the Changes" button, he/she will be redirected to check your bookings page and the booking card will shown the new booking data. A succesful message will be post in the page.
+- If the user clicks on the "Save the Changes" button, he/she will be redirected to the "Check Your Bookings" page, and the booking card will show the new booking data. A successful message will be posted on the page.
 - The form displays error messages when an error occurs.
 
 ### Contact Us
 
 ![contact-us-page-image](documentation_assets/contact-us-page-image.png)
 
-- In this page the user can find the contact information of the restaurant and a map that show the exact location of the restaurant.
+- On this page, the user can find the contact information of the restaurant and a map that shows the exact location of the restaurant.
 
 ### Forbidden Page
 
 ![forbidden-page-image](documentation_assets/forbidden-page-image.png)
 
-- This page shows a message if a user tries to access other users booking data using the edit booking page.
+- This page shows a message if a user tries to access other users' booking data using the edit booking page.
 
 [Go to the top](#table-of-contents)
 
@@ -461,134 +471,140 @@ Chrome DevTools was used during the development process to test, explore and mod
 
 Browser | Outcome | Pass/Fail |
 --- | --- | --- |
-Google Chrome | No appearance, responsiveness nor functionality issues.|  <span style="color:green">Pass</span> |
-Safari | No appearance, responsiveness nor functionality issues. |  <span style="color:green">Pass</span> |
-Mozilla Firefox | No responsiveness nor functionality issues.|  <span style="color:green">Pass</span> |
-Microsoft Edge | No appearance, responsiveness nor functionality issues. |  <span style="color:green">Pass</span> |
+Google Chrome | No appearance, responsiveness nor functionality issues.| ✅ Pass |
+Safari | No appearance, responsiveness nor functionality issues. | ✅ Pass |
+Mozilla Firefox | No responsiveness nor functionality issues.| ✅ Pass |
+Microsoft Edge | No appearance, responsiveness nor functionality issues. | ✅ Pass |
 
 #### Device Compatibility
 
 Device | Operative System |Outcome | Pass/Fail
 --- | --- | --- | --- |
- AsusVivoBook 15 | Windows 10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-MacBook Pro 15" | macOS Big Sur | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-Dell Inspiron 15 | Windows 10 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPad Pro 12.9" | iOS 15 | No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPad Pro 10.5" | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-Samsung Galaxy S8 | Android 7 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
-iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <span style="color:green">Pass</span> |
+ AsusVivoBook 15 | Windows 10 | No appearance, responsiveness nor functionality issues. | ✅ Pass  |
+MacBook Pro 15" | macOS Big Sur | No appearance, responsiveness nor functionality issues. | ✅ Pass  |
+Dell Inspiron 15 | Windows 10 | No appearance, responsiveness nor functionality issues. | ✅ Pass  |
+iPad Pro 12.9" | iOS 15 | No appearance, responsiveness nor functionality issues. | ✅ Pass  |
+iPad Pro 10.5" | iOS 15 |No appearance, responsiveness nor functionality issues. | ✅ Pass  |
+Samsung Galaxy S8 | Android 7 |No appearance, responsiveness nor functionality issues. | ✅ Pass  |
+iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | ✅ Pass  |
 
 #### Navbar testing
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Bakalar Restaurant title link | when clicking the restaurant name in the navigation bar, the browser redirects the user to the home page. | ✅ Pass  |
-| Home navbar link | when click the "Home" link in the navigation bar, the browser redirects the user to the home page. The link is also highlighted in yellow colour when the user is in the home page. The hover effects makes the home link orange when the user move the mouse over the link. | ✅ Pass  |
-Register navbar link | when click the "Register" link in the navigation bar, the browser redirects the user to the Signup page. The link is also highlighted in yellow colour when the user is in the Signup page. The hover effects makes the Register link orange when the user move the mouse over the link. This link disappear when the user is logged in. | ✅ Pass  |
-Login navbar link | when click the "Login" link in the navigation bar, the browser redirects the user to the Login page. The link is also highlighted in yellow colour when the user is in the Login page. The hover effects makes the Login link orange when the user move the mouse over the link. This link disappear when the user is logged in. | ✅ Pass  |
-Menu navbar link | when click the "Menu" link in the navigation bar, the browser redirects the user to the Menu page. The link is also highlighted in yellow colour when the user is in the Menu page. The hover effects makes the Menu link orange when the user move the mouse over the link. | ✅ Pass  |
-Contact Us navbar link | when click the "Contact Us" link in the navigation bar, the browser redirects the user to Location page. The link is also highlighted in yellow colour when the user is in the Location page. The hover effects makes the Contact Us link orange when the user move the mouse over the link. | ✅ Pass  |
-Logout navbar link | When the user is logged in, the navbar shows the Logout link. When the user click on the "Logout" link in the navigation bar, the browser redirects the user to Sign out page. The link is also highlighted in yellow colour when the user is in the Sign out page. The hover effects makes the Logout link orange when the user move the mouse over the link. | ✅ Pass  |
-| Edit User navbar link | When the user is logged in, the navbar shows the Edit User link. When the user click on the "Edit User" link in the navigation bar, the browser redirects the user to Edit User page. The link is also highlighted in yellow colour when the user is in the Edit User page. The hover effect makes the Logout link orange when the user move the mouse over the link. | ✅ Pass  |  
-Navbar welcome message | When the user is logged in, the navbar shows a customize welcome message with the Usernme on it. | ✅ Pass  |
+| -------- | ----------------------------------------------- | --------------- |
+| Bakalar Restaurant title link | Clicking the restaurant name in the navigation bar redirects the user to the home page. | ✅ Pass  |
+| Home navbar link | Clicking the "Home" link redirects the user to the home page. The link is highlighted in yellow when on the home page. Hover effects make the home link orange. | ✅ Pass  |
+| Register navbar link | Clicking the "Register" link redirects the user to the Signup page. The link is highlighted in yellow on the Signup page and turns orange on hover. This link disappears when the user is logged in. | ✅ Pass  |
+| Login navbar link | Clicking the "Login" link redirects the user to the Login page. The link is highlighted in yellow on the Login page and turns orange on hover. This link disappears when the user is logged in. | ✅ Pass  |
+| Menu navbar link | Clicking the "Menu" link redirects the user to the Menu page. The link is highlighted in yellow on the Menu page and turns orange on hover. | ✅ Pass  |
+| Contact Us navbar link | Clicking the "Contact Us" link redirects the user to the Location page. The link is highlighted in yellow on the Location page and turns orange on hover. | ✅ Pass  |
+| Logout navbar link | When logged in, clicking "Logout" redirects the user to the Sign out page. The link is highlighted in yellow on the Sign out page and turns orange on hover. | ✅ Pass  |
+| Edit User navbar link | When logged in, clicking "Edit User" redirects the user to the Edit User page. The link is highlighted in yellow on the Edit User page and turns orange on hover. | ✅ Pass  |  
+| Navbar welcome message | When logged in, the navbar displays a customized welcome message with the username. | ✅ Pass  |
 
 #### Footer testing
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Location link | When the user clicks the "location" link, the browser redirects the user to locantion.html. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
-| Facebook icon | When the user clicks the Facebook icon, the browser opens the Facebook page in a different tab. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
-| X icon | When the user clicks the X(Twitter) icon, the browser opens the X page in a different tab. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
-| Instagram icon | When the user clicks the Instagram icon, the browser opens the Instagram page in a different tab. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
+| ----------------- | --------------------------------------------- | --------------- |
+| Location link | Clicking the "Location" link redirects the user to location.html. The link turns orange on hover. | ✅ Pass  |
+| Facebook icon | Clicking the Facebook icon opens the Facebook page in a different tab. The icon turns orange on hover. | ✅ Pass  |
+| X icon (Twitter) | Clicking the X (Twitter) icon opens the X page in a different tab. The icon turns orange on hover. | ✅ Pass  |
+| Instagram icon | Clicking the Instagram icon opens the Instagram page in a different tab. The icon turns orange on hover. | ✅ Pass  |
 
 #### Index
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Menu button | When the user clicks on the Menu button, the browser redirects the user to menu.html | ✅ Pass  |
-| Booking button | When the user clicks on the Booking button, the browser redirects the user to booking.html | ✅ Pass  |
-Check your bookings button | When the user clicks on the Check your bookings button, the browser redirects the user to check-bookings.html | ✅ Pass  |
+| ---------------- | -------------------------------- | --------------- |
+| Menu button | Clicking on the Menu button redirects the user to menu.html | ✅ Pass  |
+| Booking button | Clicking on the Booking button redirects the user to booking.html | ✅ Pass  |
+| Check your bookings button | Clicking on the "Check Your Bookings" button redirects the user to check-bookings.html | ✅ Pass  |
 
 #### Menu
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Left arrow control | When the user clicks on the left arrow control the carousel shows the previous image in the carousel | ✅ Pass |
-| Right arrow control | When the user clicks on the Right arrow control the carousel shows the next image in the carousel | ✅ Pass |
+| --------------------- | --------------------------------------------- | --------------- |
+| Left arrow control | Clicking on the left arrow control moves the carousel to show the previous image. | ✅ Pass |
+| Right arrow control | Clicking on the right arrow control moves the carousel to show the next image. | ✅ Pass |
 
 #### Booking
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Date picker | When the user picks a past date in the date picker the web displays the error message: "Invadil date. Please select a date in the future.". If the user leaves the date input field empty the web shows the message: "This field is required"| ✅ Pass |
-| Time picker | When the user picks a time that is not between 14:00 to 22:00 the web displays the message: "This field is required" | ✅ Pass |
-| Guest number | When the user leaves the guest number field empty the web shows the error message: "This field is required". When the user enters a number bigger than 12 the web displays the error message: " In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
-| Book your table button | When the user clicks the "Book your table" button the web shows the pertinent error messages or in case all the fields are valid redirects the user to preview-booking page | ✅ Pass |
+| -------------------- | --------------------------------------------- | --------------- |
+| Date picker | Picking a past date displays the error message: "Invalid date. Please select a date in the future." If the user leaves the date input field empty, the web shows the message: "This field is required." | ✅ Pass |
+| Time picker | Picking a time outside of 14:00 to 22:00 displays the message: "This field is required." | ✅ Pass |
+| Guest number | Leaving the guest number field empty displays the error message: "This field is required." Entering a number greater than 12 displays the error message: "In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
+| Book your table button | Clicking the "Book your table" button shows the pertinent error messages. In case all the fields are valid, the user is redirected to the preview-booking page. | ✅ Pass |
 
 #### Preview Booking
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Date picker | When the user picks a past date in the date picker and press the update preview button, the web redirects the user to the booking page and shows the error message: "Invadil date. Please select a date in the future.". When the user picks a future valid date and press the update preview button, the date in the Booking Preview section is updated | ✅ Pass |
-| Time picker | When the user picks a time that is not between 14:00 to 22:00 the web displays the message: "This field is required". When the user picks a valid time and press the update preview button, the time in the Booking Preview section is updated | ✅ Pass |
-| Guest number | When the user leaves the guest number field empty, the user is redirected to the booking page and shows the error message: "This field is required". When the user enters a number bigger than 12, the user is redirected to the booking page and the web displays the error message: " In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
-| Submit your booking button | When the user clicks the Submit your booking button the user is redirected to the New booking page | ✅ Pass |
+| ----------------------- | --------------------------------------------- | --------------- |
+| Date picker | Picking a past date and pressing the "Update Preview" button redirects the user to the booking page and shows the error message: "Invalid date. Please select a date in the future." Picking a future valid date and pressing the "Update Preview" button updates the date in the Booking Preview section. | ✅ Pass |
+| Time picker | Picking a time outside of 14:00 to 22:00 displays the message: "This field is required." Picking a valid time and pressing the "Update Preview" button updates the time in the Booking Preview section. | ✅ Pass |
+| Guest number | Leaving the guest number field empty redirects the user to the booking page and shows the error message: "This field is required." Entering a number greater than 12 redirects the user to the booking page, and the web displays the error message: "In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
+| Submit your booking button | Clicking the "Submit your Booking" button redirects the user to the New Booking page. | ✅ Pass |
 
 #### New Booking
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Home button | When the user clicks the Home button, the web redirects the user to the Home page | ✅ Pass |
-| Check your bookings button | When the user clicks the check your bookings button, the web redirects the user to Check-bookings page | ✅ Pass |
+| ------------------- | --------------------------------------------- | --------------- |
+| Home button | Clicking the "Home" button redirects the user to the Home page. | ✅ Pass |
+| Check your bookings button | Clicking the "Check Your Bookings" button redirects the user to the Check-bookings page. | ✅ Pass |
 
 #### Check bookings
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Edit buttons | When the user clicks on any edit button on the booking cards, the web redirects the user to the Edit-booking page | ✅ Pass |
-| Cancel buttons | When the user clicks on any Cancel button on the booking cards, the web redirects the user to the confirmation-delete page. | ✅ Pass |
+| --------------- | --------------------------------------------- | --------------- |
+| Edit buttons | Clicking on any "Edit" button on the booking cards redirects the user to the Edit-booking page. | ✅ Pass |
+| Cancel buttons | Clicking on any "Cancel" button on the booking cards redirects the user to the confirmation-delete page. | ✅ Pass |
 
 #### Delete Booking
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Yes button | When the user clicks the Yes button, the booking is deleted from the database and the web redirects the user to Check-bookings page. A succesful message is displayed in the web.| ✅ Pass |
-| No button | When the user clicks the No button, the web redirects the user to Check-bookings page. | ✅ Pass |
+| --------------- | --------------------------------------------- | --------------- |
+| Yes button | Clicking the "Yes" button deletes the booking from the database, and the web redirects the user to the Check-bookings page. A successful message is displayed on the web. | ✅ Pass |
+| No button | Clicking the "No" button redirects the user to the Check-bookings page. | ✅ Pass |
 
 #### Edit User
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Phone number field | When the user enters a number with less or more than 11 digits and press the Save button, the error message "Enter a valid 11-digit phone number." is diplayed | ✅ Pass |
-| Save button | When the user leaves any empty field in the form and press Save, the form shows the message: "This field is required". When all the field are valid and the user press Save, the user is redirected to Index page and a succesful message is displayed in the page. | ✅ Pass |
+| ------------------- | --------------------------------------------- | --------------- |
+| Phone number field | Entering a number with less or more than 11 digits and pressing the "Save" button displays the error message "Enter a valid 11-digit phone number." | ✅ Pass |
+| Save button | Leaving any empty field in the form and pressing "Save" displays the message: "This field is required." When all the fields are valid, and the user presses "Save," the user is redirected to the Index page, and a successful message is displayed on the page. | ✅ Pass |
 
 #### Register
 
 | TEST | OUTCOMES | PASS/FAIL |
-| --------------- | -------------------------------- | --------------- |
-| Login page link | When the user clicks on the Sign in link the web redirects the user to the login page. | ✅ Pass |
-| Username Field | When the user press the sign up button with the Username field empty the form displays the message: "This field is required". If the user picks a Username already in use, the web displays the error message: "A user with that username already exists" | ✅ Pass |
-| Email field | When the user picks an email address already in use the web displays the error message: "A user is already registered with this email address" | ✅ Pass |
-| First Name field | When the user press the sign up button with the First Name field empty the form displays the message: "This field is required". | ✅ Pass |
-| Last Name field | When the user press the sign up button with the Last Name field empty the form displays the message: "This field is required". | ✅ Pass |
-| Phone number field | When the user enters a number with less or more than 11 digits and press the Save button, the error message "Enter a valid 11-digit phone number." is diplayed | ✅ Pass |
-| Password fields | When the user leaves one of the Passwords fields empty the form displays the message: "This field is required". If the Password fields doesn't match the form displays the message: "You must type the same password each time". If the password is not safe or has less than 8 digits the forms displays an error message to tell the user how to fix the problem. | ✅ Pass |
-| Sign up button | When all the field are valid and the user clicks the sign up button the user is redirected to the home page and a succesful message is displayed in the page. The customized welcome message in the navbar is shown with the user name on it | ✅ Pass |
+| ------------------- | --------------------------------------------- | --------------- |
+| Login page link | Clicking on the "Sign in" link redirects the user to the login page. | ✅ Pass |
+| Username Field | Pressing the sign-up button with the Username field empty displays the message: "This field is required." If the user picks a username already in use, the web displays the error message: "A user with that username already exists." | ✅ Pass |
+| Email field | Picking an email address already in use displays the error message: "A user is already registered with this email address." | ✅ Pass |
+| First Name field | Pressing the sign-up button with the First Name field empty displays the message: "This field is required." | ✅ Pass |
+| Last Name field | Pressing the sign-up button with the Last Name field empty displays the message: "This field is required." | ✅ Pass |
+| Phone number field | Entering a number with less or more than 11 digits and pressing the "Save" button displays the error message "Enter a valid 11-digit phone number." | ✅ Pass |
+| Password fields | Leaving one of the Password fields empty displays the message: "This field is required." If the Password fields don't match, the form displays the message: "You must type the same password each time." If the password is not safe or has fewer than 8 digits, the form displays an error message to guide the user on how to fix the problem. | ✅ Pass |
+| Sign up button | Clicking the sign-up button with all valid fields redirects the user to the home page, and a successful message is displayed on the page. The customized welcome message in the navbar is shown with the username. | ✅ Pass |
 
 #### Login
 
-| Sign Up page link | When the user clicks on the Sign Up link the web redirects the user to the Register page. | ✅ Pass |
-| Username field | When the user leaves the Username field empty the form displays the message: "This field is required". If the Username is not correct the error message: "The username and/or password you specified are not correct." is displayed. | ✅ Pass |
-| Password field | When the user leaves the Password field empty the form displays the message: "This field is required". If the Username is not correct the error message: "The username and/or password you specified are not correct." is displayed. | ✅ Pass |
-| Sign In button | When the fields are correct and the user clicks the Sign In button the web redirects the user to the Home page and a succesful message is displayed in the page. The customized welcome message in the navbar is shown with the user name on it. The navbar links shows the logout and Edit user links. | ✅ Pass |
+| TEST | OUTCOMES | PASS/FAIL |
+| ------------------ | --------------------------------------------- | --------------- |
+| Sign Up page link | Clicking on the "Sign Up" link redirects the user to the Register page. | ✅ Pass |
+| Username field | Leaving the Username field empty displays the message: "This field is required." If the username is incorrect, the error message: "The username and/or password you specified are not correct." is displayed. | ✅ Pass |
+| Password field | Leaving the Password field empty displays the message: "This field is required." If the password is incorrect, the error message: "The username and/or password you specified are not correct." is displayed. | ✅ Pass |
+| Sign In button | Clicking the "Sign In" button with correct fields redirects the user to the Home page, and a successful message is displayed on the page. The customized welcome message in the navbar is shown with the username. The navbar links show the "Logout" and "Edit User" links. | ✅ Pass |
 
 #### Logout
 
-| Sign out button | When the user clicks the Sign out button the web redirects the user to the Home page and a succesful message is displayed, the welcome message disapear from the Navbar and the navbar links shows the register and login links. | ✅ Pass |
+| TEST | OUTCOMES | PASS/FAIL |
+| ----------------- | --------------------------------------------- | --------------- |
+| Sign out button | Clicking the "Sign Out" button redirects the user to the Home page, and a successful message is displayed. The welcome message disappears from the Navbar, and the navbar links show the "Register" and "Login" links. | ✅ Pass |
 
 #### Forbidden
 
-| forbidden permission | When a user tries to edit other user booking, by copying other user booking number and paste it in the browser, the web redirects the user to the Forbidden page. | ✅ Pass |
+| TEST | OUTCOMES | PASS/FAIL |
+| ------------------------- | --------------------------------------------- | --------------- |
+| Forbidden permission | When a user tries to edit another user's booking by copying another user's booking number and pasting it in the browser, the web redirects the user to the Forbidden page. | ✅ Pass |
 
 [Go to the top](#table-of-contents)
 
@@ -657,14 +673,14 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 
 ## Known Bugs
 
-- The error messages from django-allauth forms are displayed twice, one in the form and the other one on the error message area.
+- The error messages from django-allauth forms are displayed twice, once in the form and the other one in the error message area.
 
 [Go to the top](#table-of-contents)
 
 ## Acknowledgements
 
-- I would like to Thanks my family for their support and love.
-- I am very grateful to my mentor, Marcel, for his invaluable help and advice that has helped me a lot in the development of all my projects.
-- Of Course I have to mention and Thanks Code Institute and its amazing Slack community for their support and providing me with the necessary knowledge to complete this project.
+- I would like to thank my family for their support and love.
+- I am very grateful to my mentor, Marcel, for his invaluable help and advice that have greatly contributed to the development of all my projects.
+- Of course, I have to mention and thank Code Institute and its amazing Slack community for their support and for providing me with the necessary knowledge to complete this project.
 
 [Go to the top](#table-of-contents)
