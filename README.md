@@ -1,6 +1,6 @@
 # BAKALAR-BOOKING-APP
 
-## Introduction:
+## Introduction
 
 This web application is a booking system for a restaurant, created with django and bootstrap. This project uses CRUD functionality to give users the options to create, read, update and delete their bookings, also including a small menu section and a contact section where the user can find information of interest about the restaurant.
 
@@ -11,7 +11,7 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
 ## Table of Contents
 
 - [BAKALAR-BOOKING-APP](#bakalar-booking-app)
-  - [Introduction:](#introduction)
+  - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [User Experience (UX)](#user-experience-ux)
     - [Project Goals](#project-goals)
@@ -54,6 +54,11 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
       - [Device Compatibility](#device-compatibility)
       - [Navbar testing](#navbar-testing)
       - [Footer testing](#footer-testing)
+      - [Index](#index)
+      - [Menu](#menu)
+      - [Booking](#booking)
+      - [Preview Booking](#preview-booking)
+      - [New booking](#new-booking)
   - [Deployment](#deployment)
   - [Credits](#credits)
     - [Content](#content)
@@ -76,7 +81,7 @@ We all have booked a table at a restaurant at some point and being able to do so
 
 ### User Stories
 
-Throughout the project I used the GitHub projects board to log all user stories. I used an AGILE perspective to manage the user stories inside my github project. 
+Throughout the project I used the GitHub projects board to log all user stories. I used an AGILE perspective to manage the user stories inside my github project.
 
 ![github-project-board](documentation_assets/github-project-board.png)
 
@@ -93,6 +98,7 @@ Throughout the project I used the GitHub projects board to log all user stories.
 - USER STORIE 11: As a user I can edit my user profile so that I can update my data on the website.
   
 ### Strategy Table
+
 Opportunity/Problem/Feature| Importance| Viability/Feasibility
 ------------ | -------------------------|---------
 Responsive design | 5 | 5
@@ -116,21 +122,21 @@ Total | 44 | 40
 
 ### Phase 1
 
-* Responsive design 
-* Account registration
-* User profile
-* Display restaurant Menu
-* Create a booking
-* Update a booking
-* Cancel a booking
+- Responsive design
+- Account registration
+- User profile
+- Display restaurant Menu
+- Create a booking
+- Update a booking
+- Cancel a booking
 
 ### Phase 2
 
-* Contact form
-* Avoid double bookings
-* Booking acceptance email
-* Account email verification
-* Social media signup
+- Contact form
+- Avoid double bookings
+- Booking acceptance email
+- Account email verification
+- Social media signup
 
 [Go to the top](#table-of-contents)
 
@@ -185,14 +191,14 @@ Edit User Profile page | ![desktop-edit-user-profile-wireframe](documentation_as
 
 This web application has been designed with bootstrap5 to be responsive across all devices.
 
-* Navigation bar:
+- Navigation bar:
   - Navigation bar when there's no user logged in:
 ![Navbar-logout-image](documentation_assets/navbar-logout-image.png)
   - Navigation bar when there's a user logged in:
 ![Navbar-login-image](documentation_assets/navbar-login-image.png)
   - The navigation bar contains links to all the sections and  has a hover effect that changes color to provide feedback to the Site User for a better user experience. It also shows the active page highlighting the page name in yellow.
 
-* Footer:
+- Footer:
   - Footer image:
 ![Footer-image](documentation_assets/footer-image.png)
   - The footer contains a link (location) to contact page where the user can find a map, the restaurant address, an email and the phone number.
@@ -467,18 +473,62 @@ iPhone 7 | iOS 15 |No appearance, responsiveness nor functionality issues. | <sp
 
 | TEST | OUTCOMES | PASS/FAIL |
 | --------------- | -------------------------------- | --------------- |
-| Bakalar Restaurant title link | when clicking the restaurant name in the navigation bar, the browser redirects the user to the home page. | Pass |
-| Home navbar link | when click the "Home" link in the navigation bar, the browser redirects the user to the home page. The link is also highlighted in yellow colour when the user is in the home page. The hover effects makes the home link orange when the user move the mouse over the link. | Pass |
-Register navbar link | when click the "Register" link in the navigation bar, the browser redirects the user to the Signup page. The link is also highlighted in yellow colour when the user is in the Signup page. The hover effects makes the Register link orange when the user move the mouse over the link. This link disappear when the user is logged in. | Pass |
-Login navbar link | when click the "Login" link in the navigation bar, the browser redirects the user to the Login page. The link is also highlighted in yellow colour when the user is in the Login page. The hover effects makes the Login link orange when the user move the mouse over the link. This link disappear when the user is logged in. | Pass |
-Menu navbar link | when click the "Menu" link in the navigation bar, the browser redirects the user to the Menu page. The link is also highlighted in yellow colour when the user is in the Menu page. The hover effects makes the Menu link orange when the user move the mouse over the link. | Pass |
-Contact Us navbar link | when click the "Contact Us" link in the navigation bar, the browser redirects the user to Location page. The link is also highlighted in yellow colour when the user is in the Location page. The hover effects makes the Contact Us link orange when the user move the mouse over the link. | Pass |
-Logout navbar link | When the user is logged in, the navbar shows the Logout link. When the user click on the "Logout" link in the navigation bar, the browser redirects the user to Sign out page. The link is also highlighted in yellow colour when the user is in the Sign out page. The hover effects makes the Logout link orange when the user move the mouse over the link. | Pass |
-| Edit User navbar link | When the user is logged in, the navbar shows the Edit User link. When the user click on the "Edit User" link in the navigation bar, the browser redirects the user to Edit User page. The link is also highlighted in yellow colour when the user is in the Edit User page. The hover effects makes the Logout link orange when the user move the mouse over the link. | Pass |  
-Navbar welcome message | When the user is logged in, the navbar shows a customize welcome message with the Usernme on it. | Pass |
+| Bakalar Restaurant title link | when clicking the restaurant name in the navigation bar, the browser redirects the user to the home page. | ✅ Pass  |
+| Home navbar link | when click the "Home" link in the navigation bar, the browser redirects the user to the home page. The link is also highlighted in yellow colour when the user is in the home page. The hover effects makes the home link orange when the user move the mouse over the link. | ✅ Pass  |
+Register navbar link | when click the "Register" link in the navigation bar, the browser redirects the user to the Signup page. The link is also highlighted in yellow colour when the user is in the Signup page. The hover effects makes the Register link orange when the user move the mouse over the link. This link disappear when the user is logged in. | ✅ Pass  |
+Login navbar link | when click the "Login" link in the navigation bar, the browser redirects the user to the Login page. The link is also highlighted in yellow colour when the user is in the Login page. The hover effects makes the Login link orange when the user move the mouse over the link. This link disappear when the user is logged in. | ✅ Pass  |
+Menu navbar link | when click the "Menu" link in the navigation bar, the browser redirects the user to the Menu page. The link is also highlighted in yellow colour when the user is in the Menu page. The hover effects makes the Menu link orange when the user move the mouse over the link. | ✅ Pass  |
+Contact Us navbar link | when click the "Contact Us" link in the navigation bar, the browser redirects the user to Location page. The link is also highlighted in yellow colour when the user is in the Location page. The hover effects makes the Contact Us link orange when the user move the mouse over the link. | ✅ Pass  |
+Logout navbar link | When the user is logged in, the navbar shows the Logout link. When the user click on the "Logout" link in the navigation bar, the browser redirects the user to Sign out page. The link is also highlighted in yellow colour when the user is in the Sign out page. The hover effects makes the Logout link orange when the user move the mouse over the link. | ✅ Pass  |
+| Edit User navbar link | When the user is logged in, the navbar shows the Edit User link. When the user click on the "Edit User" link in the navigation bar, the browser redirects the user to Edit User page. The link is also highlighted in yellow colour when the user is in the Edit User page. The hover effect makes the Logout link orange when the user move the mouse over the link. | ✅ Pass  |  
+Navbar welcome message | When the user is logged in, the navbar shows a customize welcome message with the Usernme on it. | ✅ Pass  |
 
 #### Footer testing
 
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Location link | When the user clicks the "location" link, the browser redirects the user to locantion.html. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
+| Facebook icon | When the user clicks the Facebook icon, the browser opens the Facebook page in a different tab. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
+| X icon | When the user clicks the X(Twitter) icon, the browser opens the X page in a different tab. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
+| Instagram icon | When the user clicks the Instagram icon, the browser opens the Instagram page in a different tab. The hover effect make the link orange when the user move the mouse over the link. | ✅ Pass  |
+
+#### Index
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Menu button | When the user clicks on the Menu button, the browser redirects the user to menu.html | ✅ Pass  |
+| Booking button | When the user clicks on the Booking button, the browser redirects the user to booking.html | ✅ Pass  |
+Check your bookings button | When the user clicks on the Check your bookings button, the browser redirects the user to check-bookings.html | ✅ Pass  |
+
+#### Menu
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Left arrow control | When the user clicks on the left arrow control the carousel shows the previous image in the carousel | ✅ Pass |
+| Right arrow control | When the user clicks on the Right arrow control the carousel shows the next image in the carousel | ✅ Pass |
+
+#### Booking
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Date picker | When the user picks a past date in the date picker the web displays the error message: "Invadil date. Please select a date in the future.". If the user leaves the date input field empty the web shows the message: "This field is required"| ✅ Pass |
+| Time picker | When the user picks a time that is not between 14:00 to 22:00 the web displays the message: "This field is required" | ✅ Pass |
+| Guest number | When the user leaves the guest number field empty the web shows the error message: "This field is required". When the user enters a number bigger than 12 the web displays the error message: " In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
+| Book your table button | When the user clicks the "Book your table" button the web shows the pertinent error messages or in case all the fields are valid redirects the user to preview-booking page | ✅ Pass |
+
+#### Preview Booking
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Date picker | When the user picks a past date in the date picker and press the update preview button, the web redirects the user to the booking page and shows the error message: "Invadil date. Please select a date in the future.". When the user picks a future valid date and press the update preview button, the date in the Booking Preview section is updated | ✅ Pass |
+| Time picker | When the user picks a time that is not between 14:00 to 22:00 the web displays the message: "This field is required". When the user picks a valid time and press the update preview button, the time in the Booking Preview section is updated | ✅ Pass |
+| Guest number | When the user leaves the guest number field empty, the user is redirected to the booking page and shows the error message: "This field is required". When the user enters a number bigger than 12, the user is redirected to the booking page and the web displays the error message: " In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
+| Submit your booking button | When the user clicks the Submit your booking button the user is redirected to the New booking page | ✅ Pass |
+
+#### New booking
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
 
 
 [Go to the top](#table-of-contents)

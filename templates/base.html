@@ -86,13 +86,13 @@
         {% endif %}
         {% if messages %}
         <div class="row">
-            <div class="col-md-4 offset-md-4">
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                        {% endfor %}
-                </ul>
-            </div>    
+            <div class="alert alert-danger col-md-6 offset-md-3" role="alert">
+                {% for message in messages %}
+                <div class="text-center error-message">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
