@@ -72,6 +72,7 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
     - [Content](#content)
     - [Media](#media)
     - [Code](#code)
+  - [Known Bugs](#known-bugs)
   - [Acknowledgements](#acknowledgements)
 
 ***
@@ -632,16 +633,38 @@ To deploy this page to Heroku from its GitHub repository, the following steps we
 
 ## Credits
 
-
-
 ### Content
 
+- Website content was written by the developer.
+  
 ### Media
 
+- [Pexel](https://www.pexels.com/)
+  
+  - Main image in Home page: [Main image](https://www.pexels.com/photo/cooked-food-in-stainless-steel-plate-2641886/)
+  - Birramen image in Menu page: [Birramen image](https://www.pexels.com/photo/cooked-noodles-on-ceramic-bowl-1907229/)
+  - Red and green curry pork tacos in Menu page: [Tacos image](https://www.pexels.com/photo/close-up-of-tacos-on-a-wooden-chopping-board-8230019/)
+  - Dumpling image in Menu page: [Dumpling image](https://www.pexels.com/photo/soup-with-dimsums-and-vegetables-on-ceramic-bowl-5409015/)
+  - Asian Wonton nachos in Menu page: [Asian nachos image](https://www.pexels.com/photo/food-healthy-wood-dinner-6544374/)
+  
 ### Code
+
+- [Stack Overflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/) were consulted on a regular basis.
+- [Django documentation](https://docs.djangoproject.com/en/3.2/) and [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) were consulted for a better understanding of this frameworks.
+- [Coding Ninja](https://www.codingninjas.com/studio) was consulted to get information about allauth library.
+
+[Go to the top](#table-of-contents)
+
+## Known Bugs
+
+- The error messages from django-allauth forms are displayed twice, one in the form and the other one on the error message area.
 
 [Go to the top](#table-of-contents)
 
 ## Acknowledgements
+
+- I would like to Thanks my family for their support and love.
+- I am very grateful to my mentor, Marcel, for his invaluable help and advice that has helped me a lot in the development of all my projects.
+- Of Course I have to mention and Thanks Code Institute and its amazing Slack community for their support and providing me with the necessary knowledge to complete this project.
 
 [Go to the top](#table-of-contents)
