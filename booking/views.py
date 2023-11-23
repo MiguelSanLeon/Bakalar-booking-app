@@ -145,7 +145,12 @@ def delete_booking(request, booking_id):
         messages.success(
             request, 'Your Booking has been deleted!')
 
-        return redirect('check_bookings')
+        remaining_bookings = Booking.objects.filter(user=request.user).exists()
+        if remaining_bookings:
+            return redirect('check_bookings')
+        else:
+            return redirect('home')
+            
     return redirect('home')
 
 
