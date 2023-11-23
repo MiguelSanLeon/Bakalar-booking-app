@@ -58,8 +58,16 @@ Visit the deployed website [here](https://bakalar-booking-app-f4bee72469cb.herok
       - [Menu](#menu)
       - [Booking](#booking)
       - [Preview Booking](#preview-booking)
-      - [New booking](#new-booking)
+      - [New Booking](#new-booking)
+      - [Check bookings](#check-bookings)
+      - [Delete Booking](#delete-booking)
+      - [Edit User](#edit-user)
+      - [Register](#register)
+      - [Login](#login)
+      - [Logout](#logout)
+      - [Forbidden](#forbidden)
   - [Deployment](#deployment)
+    - [Deploying on Heroku](#deploying-on-heroku)
   - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
@@ -525,19 +533,106 @@ Check your bookings button | When the user clicks on the Check your bookings but
 | Guest number | When the user leaves the guest number field empty, the user is redirected to the booking page and shows the error message: "This field is required". When the user enters a number bigger than 12, the user is redirected to the booking page and the web displays the error message: " In case you need to book for more than 12 people, please contact us on our phone number 55 555 345 2126." | ✅ Pass |
 | Submit your booking button | When the user clicks the Submit your booking button the user is redirected to the New booking page | ✅ Pass |
 
-#### New booking
+#### New Booking
 
 | TEST | OUTCOMES | PASS/FAIL |
 | --------------- | -------------------------------- | --------------- |
+| Home button | When the user clicks the Home button, the web redirects the user to the Home page | ✅ Pass |
+| Check your bookings button | When the user clicks the check your bookings button, the web redirects the user to Check-bookings page | ✅ Pass |
 
+#### Check bookings
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Edit buttons | When the user clicks on any edit button on the booking cards, the web redirects the user to the Edit-booking page | ✅ Pass |
+| Cancel buttons | When the user clicks on any Cancel button on the booking cards, the web redirects the user to the confirmation-delete page. | ✅ Pass |
+
+#### Delete Booking
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Yes button | When the user clicks the Yes button, the booking is deleted from the database and the web redirects the user to Check-bookings page. A succesful message is displayed in the web.| ✅ Pass |
+| No button | When the user clicks the No button, the web redirects the user to Check-bookings page. | ✅ Pass |
+
+#### Edit User
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Phone number field | When the user enters a number with less or more than 11 digits and press the Save button, the error message "Enter a valid 11-digit phone number." is diplayed | ✅ Pass |
+| Save button | When the user leaves any empty field in the form and press Save, the form shows the message: "This field is required". When all the field are valid and the user press Save, the user is redirected to Index page and a succesful message is displayed in the page. | ✅ Pass |
+
+#### Register
+
+| TEST | OUTCOMES | PASS/FAIL |
+| --------------- | -------------------------------- | --------------- |
+| Login page link | When the user clicks on the Sign in link the web redirects the user to the login page. | ✅ Pass |
+| Username Field | When the user press the sign up button with the Username field empty the form displays the message: "This field is required". If the user picks a Username already in use, the web displays the error message: "A user with that username already exists" | ✅ Pass |
+| Email field | When the user picks an email address already in use the web displays the error message: "A user is already registered with this email address" | ✅ Pass |
+| First Name field | When the user press the sign up button with the First Name field empty the form displays the message: "This field is required". | ✅ Pass |
+| Last Name field | When the user press the sign up button with the Last Name field empty the form displays the message: "This field is required". | ✅ Pass |
+| Phone number field | When the user enters a number with less or more than 11 digits and press the Save button, the error message "Enter a valid 11-digit phone number." is diplayed | ✅ Pass |
+| Password fields | When the user leaves one of the Passwords fields empty the form displays the message: "This field is required". If the Password fields doesn't match the form displays the message: "You must type the same password each time". If the password is not safe or has less than 8 digits the forms displays an error message to tell the user how to fix the problem. | ✅ Pass |
+| Sign up button | When all the field are valid and the user clicks the sign up button the user is redirected to the home page and a succesful message is displayed in the page. The customized welcome message in the navbar is shown with the user name on it | ✅ Pass |
+
+#### Login
+
+| Sign Up page link | When the user clicks on the Sign Up link the web redirects the user to the Register page. | ✅ Pass |
+| Username field | When the user leaves the Username field empty the form displays the message: "This field is required". If the Username is not correct the error message: "The username and/or password you specified are not correct." is displayed. | ✅ Pass |
+| Password field | When the user leaves the Password field empty the form displays the message: "This field is required". If the Username is not correct the error message: "The username and/or password you specified are not correct." is displayed. | ✅ Pass |
+| Sign In button | When the fields are correct and the user clicks the Sign In button the web redirects the user to the Home page and a succesful message is displayed in the page. The customized welcome message in the navbar is shown with the user name on it. The navbar links shows the logout and Edit user links. | ✅ Pass |
+
+#### Logout
+
+| Sign out button | When the user clicks the Sign out button the web redirects the user to the Home page and a succesful message is displayed, the welcome message disapear from the Navbar and the navbar links shows the register and login links. | ✅ Pass |
+
+#### Forbidden
+
+| forbidden permission | When a user tries to edit other user booking, by copying other user booking number and paste it in the browser, the web redirects the user to the Forbidden page. | ✅ Pass |
 
 [Go to the top](#table-of-contents)
 
 ## Deployment
 
+This project was developed using a [Codeanywhere](https://app.codeanywhere.com/) workspace. The code was commited to [Git](https://git-scm.com/) and pushed to [GitHub](https://github.com/") using the terminal.
+
+### Deploying on Heroku
+
+To deploy this page to Heroku from its GitHub repository, the following steps were taken:
+
+1. Create the Heroku App:
+    - Select "Create new app" in Heroku.
+    - Choose a name for your app and select the location.
+
+2. Prepare the environment and `settings.py` file:
+    - In the Settings tab, click on Reveal Config Vars and copy the url next to DATABASE_URL.
+    - In your Codeanywhere workspace, create an `env.py` file in the main directory.
+    - Add the DATABASE_URL value, your chosen SECRET_KEY value and the Cloudinary API_KEY to the `env.py` file.
+    - Add the SECRET_KEY value to the Config Vars in Heroku.
+    - Update the `settings.py` file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
+    - Update the Config Vars with the Cloudinary url, adding into the `settings.py` file also.
+    - In `settings.py` add the following sections:
+        - Cloudinary to the INSTALLED_APPS list
+        - STATICFILE_STORAGE
+        - STATICFILES_DIRS
+        - STATIC_ROOT
+        - MEDIA_URL
+        - DEFAULT_FILE_STORAGE
+        - TEMPLATES_DIR
+        - Update DIRS in TEMPLATES with TEMPLATES_DIR
+        - Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+
+3. Store Static and Media files in Cloudinary and Deploy to Heroku:
+    - Create three directories in the main directory; media, storage and templates.
+    - Create a file named "Procfile" in the main directory and add the following:
+        - web: gunicorn project-name.wsgi
+    - Go to Deploy tab on Heroku and connect to the GitHub, then to the required repository.
+    Click on Delpoy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
+
 [Go to the top](#table-of-contents)
 
 ## Credits
+
+
 
 ### Content
 
