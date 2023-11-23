@@ -7,21 +7,25 @@ from .forms import EditProfileForm, BookingForm
 from .models import Booking, UserProfile
 
 
+# View for Home page
 class HomePage(View):
     def get(self, request, *args, **kwargs):
         return render(request, "index.html")
 
 
+# View for Menu Page
 class MenuPage(View):
     def get(self, request, *args, **kwargs):
         return render(request, "menu.html")
 
 
+# View for Location page
 class LocationPage(View):
     def get(self, request, *args, **kwargs):
         return render(request, "location.html")
 
 
+# View for Edit User page
 class EditUserPage(View):
     def get(self, request, *args, **kwargs):
         user_profile = UserProfile.objects.get(user=request.user)
@@ -45,6 +49,7 @@ class EditUserPage(View):
         return render(request, "edit-user.html", {'form': form})
 
 
+# View for Booking page
 class BookingPage(View):
     def get(self, request, *args, **kwargs):
         form = BookingForm()
@@ -60,6 +65,7 @@ class BookingPage(View):
             return render(request, "booking.html", {'form': form})
 
 
+# View for Preview Booking page
 class PreviewBookingPage(View):
     def post(self, request, *args, **kwargs):
         form = BookingForm(request.POST)
@@ -69,6 +75,7 @@ class PreviewBookingPage(View):
             return render(request, "booking.html", {'form': form})
 
 
+# View for New Booking page
 class BookingSaved(View):
     template_name = 'new-booking.html'
 
@@ -89,6 +96,7 @@ class BookingSaved(View):
             return render(request, "booking.html", {'form': form})
 
 
+# View for Check bookings page
 def check_bookings(request):
     if request.user.is_authenticated:
         user_bookings = Booking.objects.filter(user=request.user)
@@ -98,6 +106,7 @@ def check_bookings(request):
         return render(request, 'login.html')
 
 
+# View for Edit booking page
 class EditBookingPage(View):
     def get(self, request, booking_id, *args, **kwargs):
         booking = get_object_or_404(Booking, booking_id=booking_id)
@@ -130,10 +139,12 @@ class EditBookingPage(View):
         )
 
 
+# View for confirming booking deletion
 def confirm_delete(request, booking_id):
     return render(request, 'confirm-delete.html', {'booking_id': booking_id})
 
 
+# View for deleting a booking
 def delete_booking(request, booking_id):
     if (
         request.method == 'POST' and
@@ -150,10 +161,11 @@ def delete_booking(request, booking_id):
             return redirect('check_bookings')
         else:
             return redirect('home')
-            
+
     return redirect('home')
 
 
+# View for displaying form errors
 def form_errors(request, form):
     errors = {field: form.errors[field] for field in form.errors}
     return render(request, 'form_errors.html', {'errors': errors})

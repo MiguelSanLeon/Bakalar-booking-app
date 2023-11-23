@@ -23,7 +23,6 @@
 
 <body class="d-flex flex-column min-vh-100">
     <!-- Navigation Bar-->
-
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
@@ -69,8 +68,8 @@
             </div>
         </div>
     </nav>
-
     <main class="flex-shrink-0 main-bg">
+        <!-- Form error messages -->
         {% if form.errors %}
         <div class="row">
             <div class="alert alert-danger col-md-6  offset-md-3" role="alert">
@@ -84,6 +83,7 @@
             </div>
         </div>
         {% endif %}
+        <!-- Error messages -->
         {% if messages %}
         <div class="row">
             <div class="alert alert-danger col-md-6 offset-md-3" role="alert">

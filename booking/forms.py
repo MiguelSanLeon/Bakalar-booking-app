@@ -5,6 +5,7 @@ from django.core.validators import RegexValidator
 from datetime import datetime, timedelta
 
 
+# Custom signup form extending the default SignupForm from allauth
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(max_length=25, label='First Name')
     last_name = forms.CharField(max_length=25, label='Last Name')
@@ -34,6 +35,7 @@ class CustomSignupForm(SignupForm):
         return user
 
 
+# Form for editing user profile
 class EditProfileForm(forms.ModelForm):
 
     phone_number = forms.CharField(
@@ -47,6 +49,7 @@ class EditProfileForm(forms.ModelForm):
         fields = ('first_name', 'last_name', 'phone_number')
 
 
+# Form for creating or editing a booking
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
@@ -89,7 +92,7 @@ class BookingForm(forms.ModelForm):
             max_time = datetime.strptime('22:00', '%H:%M').time()
             if not min_time <= booking_time <= max_time:
                 raise forms.ValidationError(
-                    "Invalid time. Please select a time between" 
+                    "Invalid time. Please select a time between"
                     "14:00 and 22:00.")
         return booking_time
 

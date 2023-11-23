@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Booking, UserProfile
 
 
+# Registering the Booking model with the Django admin site
 @admin.register(Booking)
 class BookingComments(admin.ModelAdmin):
 
@@ -26,6 +27,7 @@ class BookingComments(admin.ModelAdmin):
     cancel_booking.short_description = 'Cancel selected bookings'
 
 
+# Registering the UserProfile model with the Django admin site
 @admin.register(UserProfile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'first_name', 'last_name', 'phone_number')

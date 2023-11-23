@@ -3,10 +3,12 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+# Possible statuses for a booking
 STATUS = ((0, 'Booking pending'), (1, 'Booking accepted'),
           (2, 'Booking cancelled'))
 
 
+# Model representing a booking
 class Booking(models.Model):
     booking_id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False)
@@ -23,6 +25,7 @@ class Booking(models.Model):
         ordering = ['-booking_date']
 
 
+# Model representing user profile information
 class UserProfile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, primary_key=True,
